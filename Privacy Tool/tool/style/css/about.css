@@ -1,0 +1,38 @@
+/**
+ * About Container CSS Rules.
+ */
+ .about-diagram-container {
+    display: flex;
+    justify-content: center;
+}
+
+.about-diagram {
+    width: 100%;
+    max-width: 100%
+}
+
+.about-text {
+    font-weight: 500;
+    text-align: justify;
+    word-wrap: break-word;
+    padding-left:2em ! important;
+}
+
+.about-sub-text {
+    font-weight: 500;
+    text-align: justify;
+    word-wrap: break-word;
+    padding-left: 4em ! important;
+}
+
+.about-inner-sub-text {
+    font-weight: 500;
+    text-align: justify;
+    word-wrap: break-word;
+    padding-left: 6em ! important;
+}
+
+.about-explanatory-text {
+    text-align: justify;
+    word-wrap: break-word;
+}

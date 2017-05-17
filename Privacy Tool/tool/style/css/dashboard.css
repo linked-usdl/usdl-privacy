@@ -1,0 +1,15 @@
+/**
+ * Dashboard Container CSS Rules.
+ */
+.dashboard-container {
+    text-align: center;
+    display: table;
+}
+
+.dashboard-tabled {
+    display: table-cell;
+    width: 100%;
+    padding-top: 15em;
+    padding-left: 1em;
+    opacity: 0.7;
+}

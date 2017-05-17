@@ -1,0 +1,114 @@
+ /**
+ * Nav Bar CSS Rules.
+ *
+ * Set height of the grid so .sidenav can be 100%
+ * Set gray background color and 100% height
+ */
+.row.content {
+    height: 550px
+}
+
+/*.fill-color,*/
+.sidenav {
+    background-color: #f1f1f1 !important;
+}
+
+.sidenav-left {
+    min-height: 120% !important;
+}
+
+/**
+ * Base Container Target CSS Rules.
+ *
+ * Show/Hide the proper container
+ * based on the nav bar selection
+ */
+.target {
+    width: 50%;
+    background-color: white;
+}
+
+.target > div {
+    display: none;
+}
+
+.target > div:target{
+    display: block;
+}
+
+/**
+ * Custom Title Label CSS Rules.
+ */
+.custom-title {
+    font-size: 17px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.custom-note {
+    font-size: 12px;
+    color: inherit;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.custom-sub-title {
+    font-size: 15px;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 1.1;
+    color: inherit;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/**
+ * Bottom Tool Console Log CSS Rules.
+ */
+.tool-console-text-area {
+    border-top: 2px solid;
+    width: 100%;
+    height: 7.5em;
+    resize: none;
+    overflow: auto;
+    word-wrap: break-word;
+    overflow-y: auto;
+}
+
+/**
+ * Footer CSS Rules
+ */
+ .footer-custom {
+    padding: 1em;
+    color: white;
+    background: #333;
+    clear: left;
+    text-align: left;
+ }
+
+.footer-element {
+    margin: 0 0 1px !important;
+}
+
+.footer-link {
+    color: white;
+}
+
+.footer-link:hover {
+    color: burlywood;
+    cursor: pointer;
+}
+
+/**
+ * Common CSS Rules.
+ */
+ .section-line-space {
+    width: 90% ! important;
+    border-top: 0.15em solid darkblue;
+}

@@ -1,0 +1,372 @@
+/**
+ * General Tool CSS Rules.
+ */
+.hidden-container {
+    display: none ! important;
+}
+
+.opacity-applied {
+    opacity: 0.5;
+}
+
+.custom-checkbox {
+  -ms-transform: scale(2);
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  padding: 10px;
+  float: right;
+}
+
+.custom-checkbox:hover {
+    cursor: pointer;
+}
+
+.custom-title-results {
+    font-size: 17px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/**
+ * Drop File Area CSS Rules.
+ */
+.drop-file-container {
+	padding: 10px;
+	border: 2px solid lightcoral;
+}
+
+.drop-file {
+    border: 2px dashed #bbb;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: center;
+    color: #bbb;
+}
+
+/**
+ * Upload File Button CSS Rules.
+ */
+.upload-file-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.inputfile {
+    width: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    color: #d3394c;
+    border: 2px solid currentColor;
+}
+
+/*.tool-button:focus,
+.tool-button.inputfile.has-focus,
+.tool-button:hover,*/
+.inputfile:focus + label,
+.inputfile.has-focus + label,
+.inputfile + label:hover {
+    outline: 1px dotted darkslateblue;
+    outline: -webkit-focus-ring-color auto 5px;
+    color: #722040;
+}
+
+.inputfile + label svg {
+    width: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+
+/**
+ * File Details List CSS Rules.
+ */
+.input-file-list-container {
+	padding: 10px;
+	border: 2px solid lightcoral
+}
+
+.content-list,
+.results-list,
+.input-file-list {
+	padding-top: 0px ! important;
+}
+
+/**
+ * Tool Container and Buttons CSS Rules.
+ */
+.tool-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5em;
+}
+
+.tool-button {
+    background-color: floralwhite;
+    border: 2px solid lightcoral;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.arrow-right-img {
+    height: 4em;
+}
+
+/**
+ * Toggle Switch Button CSS Rules.
+ */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 180px;
+    height: 34px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: orangered;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 36px;
+    width: 60px;
+    left:0px;
+    bottom: -1px;
+    top: -1px;
+    background-color: black;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(120px);
+    -ms-transform: translateX(120px);
+    transform: translateX(120px);
+}
+
+.text {
+    color: white;
+}
+
+.text:after {
+    position: absolute;
+    top: 7px;
+    right: 25px;
+    content: "Graphical";
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.text:before {
+    position: absolute;
+    top: 7px;
+    left: 25px;
+    content: "Textual";
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+input + .slider + .text:after {
+    opacity: 1;
+}
+
+input + .slider + .text:before {
+    opacity: 0;
+}
+
+input:checked + .slider + .text:after {
+    opacity: 0;
+}
+
+input:checked + .slider + .text:before {
+    opacity: 1;
+}
+
+/**
+ * Module Results CSS Rules.
+ */
+.content-container,
+.results-container {
+	padding: 10px;
+	border: 2px solid lightcoral
+}
+
+.textual-results-type {
+    font-weight: 500;
+    color: midnightblue;
+}
+
+.textual-results-annotations {
+    padding-left: 9em;
+}
+
+.textual-results-ontology-name {
+    color: mediumblue ! important;
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+.textual-results-individual-name {
+    color: darkred;
+    text-align: justify;
+    word-wrap: break-word;
+    font-weight: 700;
+    padding-left:2em ! important;
+}
+
+.textual-results-action-type {
+    font-weight: 600;
+    text-align: justify;
+    word-wrap: break-word;
+    padding-left:5em ! important;
+    color: cornflowerblue;
+}
+
+.textual-results-action-list {
+    text-align: justify;
+    word-wrap: break-word;
+    padding-left:7em ! important;
+}
+
+.textual-results-line-space {
+    width: 95% ! important;
+    border-top: 3px solid darkblue;
+}
+
+.graphical-results-ontology-name {
+    color: mediumblue ! important;
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+.graphical-results-list {
+    height: 600px;
+}
+
+.graphical-results-line-space {
+    width: 95% ! important;
+    border-top: 3px solid darkblue;
+    margin-top: 10px;
+}
+
+/**
+ * Legend CSS Rules.
+ */
+.legend-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+}
+
+.legend { 
+    list-style: none;
+}
+
+.legend li {
+    float: left;
+    margin-right: 10px;
+}
+
+.legend span {
+    border: 1px solid #ccc;
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin: 2px;
+}
+
+.legend .legend-actors {
+    background-color: #337AB7;
+}
+
+.legend .legend-regular-data {
+    background-color: #b8d60e;
+}
+
+.legend .legend-sensitive-data {
+    background-color: #f4c242;
+}
+
+.legend-security-enchancement {
+    background-color: #900020;
+    height: 7px ! important;
+    width: 21px ! important;;
+}
+
+/**
+ * Content and Conflicts CSS Rules.
+ */
+.input-content,
+.input-validation {
+    float: right;
+    margin-right: 2em;
+}
+
+.content-fields,
+.validation-fields {
+    padding-left: 5em;
+}
+
+.content-list {
+    text-align: justify;
+    word-wrap: break-word;
+    height: 30em;
+}
+
+.textual-results-mid-message {
+    font-weight: 500;
+    color: midnightblue;
+    padding-left: 4em ! important;
+}
+
+.semi-square {
+   border-radius: 5px;
+   border-color: #2196F3;
+   border-width: 0.2em;
+   width: 70%;
+}

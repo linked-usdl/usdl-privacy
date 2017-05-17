@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Linked USDL - Privacy Module Tool</title>
+
+	<!-- Set up the css files -->
+	<link rel="stylesheet" type="text/css" href="style/css/main.css"></link>
+
+	<link rel="stylesheet" type="text/css" href="style/css/dashboard.css"></link>
+	<link rel="stylesheet" type="text/css" href="style/css/tool.css"></link>
+	<link rel="stylesheet" type="text/css" href="style/css/about.css"></link>
+	<link rel="stylesheet" type="text/css" href="style/css/more.css"></link>
+
+	<!-- Set up the metadata -->
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<meta name="viewport" content="height=device-height, initial-scale=1"></meta>
+
+	<!-- Initialize the googleapis and bootstrap js files -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script>
+		/**
+		 * Loads the {Dashboard} HTML view on the page's first load.
+		 */
+		function load() {
+			document.location.href = document.URL.split("#")[0] + "#dashboardContainer";
+			document.getElementById("verifyDataButton").disabled = true;
+			document.getElementById("sparqlButton").disabled = true;
+			document.getElementById("resultsButton").disabled = true;
+		}
+	</script>
+
+	<style>
+		/**
+		 * Initial CSS set up for the nav bar.
+		 */
+		
+		@media screen and (max-width: 767px) {
+			.sidenav {
+				padding: 15px;
+			}
+			.row.content {
+				height: auto;
+			}
+		}
+	</style>
+</head>
+
+<body id="bodyContainer" onload="load()">
+	<nav class="navbar navbar-inverse visible-xs">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+				<a class="navbar-brand">Linked USDL - Privacy Module</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav" id="navCollapsed">
+					<li class="sidenav-button active" id="dashboardButtonCollapsed"><a href="#dashboardContainer">Dashboard</a></li>
+					<li class="sidenav-button" id="toolButtonCollapsed"><a href="#toolContainer">Tool</a></li>
+					<li class="sidenav-button" id="aboutButtonCollapsed"><a href="#aboutContainer">About</a></li>
+					<li class="sidenav-button" id="moreButtonCollapsed"><a href="#moreContainer">More</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid fill-color">
+		<div class="row content">
+
+			<div class="col-sm-3 sidenav hidden-xs sidenav-left">
+				<h2>Linked USDL - Privacy Module</h2>
+				<ul class="nav nav-pills nav-stacked" id="navStacked">
+					<li class="sidenav-button active" id="dashboardButtonStacked"><a href="#dashboardContainer">Dashboard</a></li>
+					<li class="sidenav-button" id="toolButtonStacked"><a href="#toolContainer">Tool</a></li>
+					<li class="sidenav-button" id="aboutButtonStacked"><a href="#aboutContainer">About</a></li>
+					<li class="sidenav-button" id="moreButtonStacked"><a href="#moreContainer">More</a></li>
+				</ul>
+			</div>
+
+			<div class="col-sm-8 target" id="baseContainer">
+				<div class="dashboard-container" id="dashboardContainer">
+					<img src="style/imgs/dashboard.png" class="dashboard-tabled"></img>
+				</div>
+				<!-- dashboardContainer -->
+
+				<div class="" id="toolContainer">
+					<br>
+					<h4>Privacy Module Tool</h4>
+					<hr>
+					<div id="innerToolContainer">
+						<label class="custom-title">Upload a few ontologies files*</label>
+						<label class="custom-note">*In the first line of the ontology files, the prefix should refer the ontology and not some other required one.</label>
+
+						<div class="drop-file-container">
+							<div class="drop-file" id="dropFileContainer">Drop files here</div>
+						</div>
+
+						<label class="custom-title" style="text-align: center">or</label>
+						<br>
+
+						<div class="upload-file-button-container">
+							<input type="file" name="fileButton[]" id="fileButton" class="inputfile" data-multiple-caption="{count} files selected" multiple/>
+							<label for="fileButton"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg><span>Choose files</span></label>
+						</div>
+
+						<br>
+						<label class="custom-title">Uploaded ontology files</label>
+						<div class="input-file-list-container">
+							<output class="input-file-list" id="inputFileList">No files provided..</output>
+						</div>
+
+						<br>
+						<label class="custom-title">Available actions</label>
+						<div class="tool-buttons-container">
+							<button type="button" class="tool-button opacity-applied" id="verifyDataButton">Verify Data</button>
+							<img src="style/imgs/arrow-right.png" class="arrow-right-img opacity-applied" id="stepOne"></img>
+							<button type="button" class="tool-button opacity-applied" id="sparqlButton">SPARQL</button>
+							<img src="style/imgs/arrow-right.png" class="arrow-right-img opacity-applied" id="stepTwo"></img>
+							<button type="button" class="tool-button opacity-applied" id="resultsButton">Results</button>
+						</div>
+
+						<br>
+
+						<div class="hidden-container" id="contentContainer">
+							<hr>
+
+							<div class="checkboxContentContainer">
+								<label class="custom-title-results">Ontology file content</label>
+								<input type="checkbox" class="custom-checkbox" id="contentCheckbox" name="displayContent" title="Toggle visibility">
+							</div>
+
+							<div class="content-container hidden-container" id="innerContentContainer">
+								<label class="custom-sub-title">Select the ontology to display its content</label>
+								<div class="content-fields">
+									<select class="semi-square" id="selectedOntologyContentId"></select>
+
+									<button type="button" class="input-content" id="displayContentButton">Display</button>
+								</div>
+
+								<div class="hidden-container" id="contentListContainer">
+									<hr class='textual-results-line-space'>
+
+									<output id="fileContentList"></output>
+								</div>
+							</div>
+							<!-- innerContentContainer -->
+						</div>
+						<!-- contentContainer -->
+
+						<div class="hidden-container" id="conflictsContainer">
+							<hr>
+
+							<div class="checkboxConflictsContainer">
+								<label class="custom-title-results">Conflicts validation</label>
+								<input type="checkbox" class="custom-checkbox" id="conflictsCheckbox" name="displayConflicts" title="Toggle visibility">
+							</div>
+
+							<div class="results-container hidden-container" id="innerConflictsContainer">
+								<label class="custom-sub-title">Select the ontology to validate</label>
+								<div class="validation-fields">
+									<select class="semi-square" id="selectedOntologyValidationId"></select>
+
+									<button type="button" class="input-validation" id="validateButton">Validate</button>
+								</div>
+
+								<div class="hidden-container" id="conflictsResultsContainer">
+									<hr class='textual-results-line-space'>
+
+									<output class="results-list" id="conflictsResultsList"></output>
+								</div>
+							</div>
+							<!-- innerConflictsContainer -->
+						</div>
+						<!-- conflictsContainer -->
+
+						<div class="hidden-container" id="moduleResultsContainer">
+							<hr>
+
+							<div class="checkboxModuleResultsContainer">
+								<label class="custom-title-results">Module results</label>
+								<input type="checkbox" class="custom-checkbox" id="moduleResultsCheckbox" name="displayModuleResults" title="Toggle visibility"
+								 checked>
+							</div>
+
+							<div id="innerModuleResults">
+								<div>
+									<label class="switch">
+								<input type="checkbox" id="switchCheckbox" checked>
+								<div class="slider"></div>
+								<div class="text"></div>
+								</label>
+								</div>
+
+								<br>
+								<div id="textualContainer">
+									<label class="custom-sub-title">Textual Representation</label>
+									<div class="results-container">
+										<output class="results-list" id="textualResultsList"></output>
+									</div>
+								</div>
+
+								<div class="hidden-container" id="graphicalContainer">
+									<label class="custom-sub-title">Graphical Representation</label>
+									<div class="results-container">
+										<output class="results-list" id="graphicalResultsList"></output>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+						<!-- moduleResultsContainer -->
+					</div>
+					<!-- innerToolContainer -->
+					<hr>
+				</div>
+				<!-- toolContainer -->
+
+				<div class="" id="aboutContainer">
+					<br>
+					<h4>About</h4>
+					<hr>
+					<h3>Linked USDL</h3>
+					<p class="about-text">Linked USDL (<a href="https://www.w3.org/2005/Incubator/usdl/" target="_blank">Unified Service Description Language</a>)
+						was developed for describing business and software services using computer-readable and computer­‐understandable specifications
+						to make them tradable on the web/Internet, by comprising modules (e.g. <a href="https://github.com/linked-usdl/usdl-core"
+						 target="_blank">usdl-core</a>) where each module targeting a specific aspect.</p>
+
+					<p class="about-text">Alongside with the business specifications, privacy has a crucial role in the services description. Personal data agreement
+						properties should describe the privacy categorization that is applied onto the data that are provided, shared and utilized
+						within the service and provide answers to the following questions.</p>
+					<p class="about-sub-text">How data are categorized into information types</p>
+					<p class="about-sub-text">Which data is exactly collected (detailed specification)</p>
+					<p class="about-sub-text">Who can access these data (which information type)</p>
+					<p class="about-sub-text">Which actions are best used in order to describe each actor purpose (related with the data utlization and processing)</p>
+
+					<hr class="section-line-space">
+					<h3>Privacy Module for Linked USDL</h3>
+
+					<p class="about-text">Through the implementation of the privacy module tool, we focused on tackling the privacy questions mentioned above
+						- by categorizing the data into two main types of information and extending the basic usdl-core module by defining
+						new business roles that describe each actor's role and interaction with the data at hand.</p>
+
+					<br>
+					<div class="about-diagram-container">
+						<img class="about-diagram" src="style/imgs/privacy-topography-diagram.png"></img>
+					</div>
+
+					<br>
+					<p class="about-text">Data are categorized into two main types of information.</p>
+					<p class="about-sub-text">General knowledge information (Regular Data)</p>
+					<p class="about-sub-text">Sensitive personal information (Sensitive Data). These data describe the identity of the person of interest, by having
+						an immediate connection to his/her privacy information (such as racial/ethnic origin, political opinion, religious
+						beliefs, physical or mental health or condition, etc)</p>
+					<p class="about-text">Due to the fact that all data could be used for discrimination (and therefore result into becoming data of a private
+						nature) - it needs to be treated with greater care.</p>
+
+					<br>
+					<p class="about-text">Actors are the end users of the service and can be either human or computer entities.</p>
+					<p class="about-sub-text">Owners (the users that are the 'original'' data providers to the service)</p>
+					<p class="about-inner-sub-text">Person of Interest</p>
+					<p class="about-inner-sub-text">Authorised Person</p>
+					<p class="about-sub-text">System users (system users, including the service provider, are the entities that consist the system and their work
+						is strictly related from it)</p>
+					<p class="about-sub-text">Third-party users (the users that do not belong in the organization/system, where the Rightful owners provide directly
+						their information)</p>
+					<p class="about-inner-sub-text">Third-party providers (similar to the system end users that consist the 'initial'' service provider, the third-party
+						providers are considered both; an end user that utilizes the data from the initial service provider as fit based on
+						ther job context and restrictions and at the same time serves as an independent provider to other third-party users</p>
+					<p class="about-inner-sub-text">Third-party end users (the entities that do not belong in the organization and they utilize the information provided
+						to them as fit based on their job context and restrictions</p>
+					<p class="about-sub-text">Authority/Regulator (the organization that is responsible for the verification of the statutes and regulations that
+						apply to the data processing by the end users)</p>
+
+					<br>
+					<p class="about-text">Actions are the available tasks that Actors can perform on the Data classifications based on their business scope and restrictions.</p>
+					<p class="about-sub-text">accessDenied</p>
+					<p class="about-sub-text">analyzes</p>
+					<p class="about-sub-text">distributes</p>
+					<p class="about-sub-text">manages</p>
+					<p class="about-sub-text">modifies</p>
+					<p class="about-sub-text">processes</p>
+					<p class="about-sub-text">provides</p>
+					<p class="about-sub-text">storages</p>
+					<p class="about-sub-text">notAnalyzes</p>
+					<p class="about-sub-text">notDistributes</p>
+					<p class="about-sub-text">notManages</p>
+					<p class="about-sub-text">notModifies</p>
+					<p class="about-sub-text">notProcesses</p>
+					<p class="about-sub-text">notProvides</p>
+					<p class="about-sub-text">notStorages</p>
+
+					<br>
+					<p class="about-text">In addition, custom annotations were created for modelling various concepts that can be applied on data actions with their respective values. To be more specific, the custom annotations focus on the security enhancement (labelled as "securityEnchancement"), use intention (labelled as "useIntention") and retention period (labelled as "retentionPeriod").</p>
+
+					<hr class="section-line-space">
+					<h3>Privacy Module Tool</h3>
+
+					<p class="about-text">The developed tool* leverages the <a href="https://www.w3.org/TR/rdf-sparql-query/" target="_blank">SPARQL</a> language
+						in order to extract information from ontologies that are designed based on the above data, actors and actions categorization
+						and present the entire model properties in a user-friendly format.</p>
+
+
+					<br>
+					<h4 class="about-explanatory-text"><small>*The tool was developed as a partial fulfillment of the thesis requirements for the <a href="https://www.cs.ucy.ac.cy" target="_blank">MSc Computer Science</a> 
+					Degree at the <a href="http://www.ucy.ac.cy" target="_blank">University of Cyprus</a>. It can be extended without prejudicing the rights of the original work's author.</small></h4>
+				</div>
+				<!-- aboutContainer -->
+
+				<div class="" id="moreContainer">
+					<br>
+					<h4>More</h4>
+					<hr>
+					<h3>Build Prerequisites</h3>
+					<p class="more-text">Upon modification of any javascript (.js) file we need to bundle up (using <a href="http://browserify.org/" target="_blank">Browserify</a>)
+						all dependencies that are referenced in the code, due to the fact that browsers dot not have the 'require' method defined
+						by default. Along with Browserify, we need to install some additional packages that allow us to bundle, copy/move and
+						export our javascript code.</p>
+					<p class="more-text">For convenience, we created a couple grunt tasks that allow us to automate the process of installing additional node
+						modules (including Browserify), bundling our modified javascript files, and export them into the 'build' directory
+						that the index HTML file will fetch them from.</p>
+					<p class="more-text"><a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank">Node.js</a> and
+						<a href="https://gruntjs.com/" target="_blank">Grunt</a> javascript tools are required for this automation and need
+						to be installed.</p>
+
+					<hr class="section-line-space">
+
+					<h3>Build Commands</h3>
+					<p class="more-text">Once all the required tools are installed, we can perform the following commands from within the project directory.</p>
+					<p class="more-sub-text">> 'npm install' (first time only, installs all required node modules)</p>
+					<p class="more-sub-text">> 'grunt' (required after each change in .js files, all tasks will be executed)</p>
+
+					<hr class="section-line-space">
+
+					<h3>Ontologies Configuration</h3>
+					<p class="more-text">The tool supports ontologies that were build based on <a href="http://protege.stanford.edu/" target="_blank">Protégé</a>.
+						Prior running the tool against an ontology, a verification should be made that in the first line of the ontology file
+						the prefix is referring the actual ontology file and not some other required one (by default Protégé does so).</p>
+					<p class="more-sub-text">A simple format of the required configuration is as follows.</p>
+					<div class="more-outter-code-snippet">
+						<div class="more-code-snippet">
+							<ol class="more-code-snippet-ol">
+								<li class="more-code-snippet-line more-code-snippet-line-important">
+									<span class="more-code-prefix-snippet">@prefix</span>
+									<span class="more-code-naming-snippet">privacy-topography:</span>
+									<span>&lt;http://www.semanticweb.org/user/2017/2/privacy-topography#&gt; .</span>
+								</li>
+								<li class="more-code-snippet-line">
+									<span class="more-code-prefix-snippet">@prefix</span>
+									<span class="more-code-naming-snippet">owl:</span>
+									<span>&lt;http://www.w3.org/2002/07/owl#&gt; .</span>
+								</li>
+								<li class="more-code-snippet-line">
+									<span class="more-code-prefix-snippet">@prefix</span>
+									<span class="more-code-naming-snippet">rdf:</span>
+									<span>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .</span>
+								</li>
+								<li class="more-code-snippet-line">
+									<span class="more-code-prefix-snippet">@prefix</span>
+									<span class="more-code-naming-snippet">xml:</span>
+									<span>&lt;http://www.w3.org/XML/1998/namespace&gt; .</span>
+								</li>
+								<li class="more-code-snippet-line">
+									<span class="more-code-prefix-snippet">@prefix</span>
+									<span class="more-code-naming-snippet">xsd:</span>
+									<span>&lt;http://www.w3.org/2001/XMLSchema#&gt; .</span>
+								</li>
+								<li class="more-code-snippet-line">
+									<span class="more-code-prefix-snippet">@prefix</span>
+									<span class="more-code-naming-snippet">rdfs:</span>
+									<span>&lt;http://www.w3.org/2000/01/rdf-schema##&gt; .</span>
+								</li>
+								<li class="more-code-snippet-line">
+									<span class="more-code-prefix-snippet">@prefix</span>
+									<span class="more-code-naming-snippet">actors-topography:</span>
+									<span>&lt;http://www.semanticweb.org/user/2017/2/actors-topography#&gt; .</span>
+								</li>
+								<li class="more-code-snippet-line">
+									<span class="more-code-prefix-snippet">@prefix</span>
+									<span class="more-code-naming-snippet">data-topography:</span>
+									<span>&lt;http://www.semanticweb.org/user/2017/2/data-topography#&gt; .</span>
+								</li>
+								<li class="more-code-snippet-line"></li>
+								<li class="more-code-snippet-line">
+									<span>&lt;http://www.semanticweb.org/user/2017/2/privacy-topography&gt; rdf:type owl:Ontology .</span>
+								</li>
+							</ol>
+						</div>
+					</div>
+					<!-- outterCodeSnippet -->
+					<br>
+				</div>
+				<!-- moreContainer -->
+			</div>
+			<!-- baseContainer -->
+
+		</div>
+	</div>
+
+	<div class="tool-console-container">
+		<textarea class="tool-console-text-area" id="toolConsoleTextarea" placeholder="Privacy Module Tool Console Log.." readonly></textarea>
+	</div>
+
+	<footer class="container-fluid footer-custom" id="footer">
+		<p class="footer-element">© 2017 | Privacy Module Tool | Postgraduate: Joseph Ioannou | Supervisor: <a href="https://www.cs.ucy.ac.cy/~gkapi/" target="_blank"
+			 class="footer-link">Dr. Georgia Kapitsaki</a> | <a href="https://www.ucy.ac.cy/" target="_blank" class="footer-link">University of Cyprus</a></p>
+	</footer>
+
+	<!-- Initialize the modules js files -->
+	<script src="build/external/custom-file-input.js"></script>
+	<script src="build/external/spin.js"></script>
+	<script src="build/external/vis.js"></script>
+
+	<script src="build/app.js"></script>
+
+	<script src="build/conflictsValidation.js"></script>
+	<script src="build/utilFiles.js"></script>
+	<script src="build/prepData.js"></script>
+	<script src="build/sparqlStore.js"></script>
+	<script src="build/eventListener.js"></script>
+</body>
+
+</html>

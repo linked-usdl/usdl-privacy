@@ -1,0 +1,445 @@
+@prefix : <http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix data-topography: <http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#> .
+@prefix actors-topography: <http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#> .
+
+<http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario> a owl:Ontology ;
+	rdfs:comment "The 'bookstore' ontology describes the relationships that can exist between the actors that interact with the service and data classifications (Regular and Sensitive Data). Through this scenario, actors and data classifications are utilized in order to portray the respective service behavior."@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#DataActions
+
+actors-topography:DataActions a owl:AnnotationProperty ;
+	rdfs:comment "Represents all actions that an actor can perform."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#Description
+
+actors-topography:Description a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the description that describes further an actor's purpose."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#Name
+
+actors-topography:Name a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the actor's full name."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#RegularDescription
+
+data-topography:RegularDescription a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the Regular data description. Describes the regular data entry."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#RegularInformation
+
+data-topography:RegularInformation a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the Regular data information. Defines the Regular information of the specific data entry."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#RegularTopic
+
+data-topography:RegularTopic a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the Regular data topic. Defines the Regular data entry."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#SensitiveDescription
+
+data-topography:SensitiveDescription a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the sensitive data description. Describes the sensitive data entry."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#SensitiveInformation
+
+data-topography:SensitiveInformation a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the sensitive data information. Defines the sensitive information of the specific data entry."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#SensitiveTopic
+
+data-topography:SensitiveTopic a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the sensitive data topic. Defines the sensitive data entry."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#retentionPeriod
+
+:retentionPeriod a owl:AnnotationProperty ;
+	rdfs:comment "Defines the allowed time that an actor is able to the perform the respective data action"@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#securityEnchancement
+
+:securityEnchancement a owl:AnnotationProperty ;
+	rdfs:comment "Defines the security enchancement (security protocol) that is applied on a data action"@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#useIntention
+
+:useIntention a owl:AnnotationProperty ;
+	rdfs:comment "Defines the intentions usage of an actor in respect to a data action"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#accessDenied
+
+:accessDenied a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'Access Denied' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#analyzes
+
+:analyzes a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'Analyzes' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#distributes
+
+:distributes a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'Distributes' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#manages
+
+:manages a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'Manages' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#modifies
+
+:modifies a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'Analyzes' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#notAnalyzes
+
+:notAnalyzes a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'notAnalyzes' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#notDistributes
+
+:notDistributes a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'notDistributes' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#notManages
+
+:notManages a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'notManages' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#notModifies
+
+:notModifies a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'notModifies' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#notProcesses
+
+:notProcesses a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'notProcesses' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#notProvides
+
+:notProvides a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'notProvides' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#notStorages
+
+:notStorages a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'notStorages' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#processes
+
+:processes a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'Processes' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#provides
+
+:provides a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'Provides' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#storages
+
+:storages a owl:ObjectProperty ;
+	rdfs:comment "Represents an action of type 'Storages' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#AuthorityRegulator
+
+actors-topography:AuthorityRegulator a owl:Class .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#PersonOfInterest
+
+actors-topography:PersonOfInterest a owl:Class .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#SystemUsers
+
+actors-topography:SystemUsers a owl:Class .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#ThirdPartyEndUsers
+
+actors-topography:ThirdPartyEndUsers a owl:Class .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#RegularData
+
+data-topography:RegularData a owl:Class .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#SensitiveData
+
+data-topography:SensitiveData a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#BookResellerLtd
+
+:BookResellerLtd a owl:NamedIndividual , actors-topography:ThirdPartyEndUsers ;
+	:accessDenied :EmailAddress01 , :EmailAddress02 , :FullName01 , :FullName02 , :IdentificationNumber01 , :IdentificationNumber02 , :PhysicalAddress01 , :PhysicalAddress02 , :TelephoneNumber01 , :TelephoneNumber02 ;
+	:analyzes :PurchaseHistory01 , :PurchaseHistory02 ;
+	actors-topography:DataActions "The applicable data actions are analyze anonymized customer data" ;
+	actors-topography:Description "A reseller company that desires to analyze customers' data for their business operations" ;
+	actors-topography:Name "Book Reseller Ltd" ;
+	rdfs:comment "Represents an actor of 'Third Party End Users' in the system."@en .
+
+_:genid1 a owl:Axiom ;
+	owl:annotatedSource :BookResellerLtd ;
+	owl:annotatedProperty :analyzes ;
+	owl:annotatedTarget :PurchaseHistory01 ;
+	:securityEnchancement "AccessToken" .
+
+_:genid2 a owl:Axiom ;
+	owl:annotatedSource :BookResellerLtd ;
+	owl:annotatedProperty :analyzes ;
+	owl:annotatedTarget :PurchaseHistory02 ;
+	:securityEnchancement "AccessToken" .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#EmailAddress01
+
+:EmailAddress01 a owl:NamedIndividual , data-topography:SensitiveData ;
+	data-topography:SensitiveDescription "Represents the email address of the customer" ;
+	data-topography:SensitiveInformation "jd@example.com" ;
+	data-topography:SensitiveTopic "Email Address" ;
+	rdfs:comment "Represents a data of 'Sensitive Data' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#EmailAddress02
+
+:EmailAddress02 a owl:NamedIndividual , data-topography:SensitiveData ;
+	data-topography:SensitiveDescription "Represents the email address of the customer" ;
+	data-topography:SensitiveInformation "rc@example.com" ;
+	data-topography:SensitiveTopic "Email Address" ;
+	rdfs:comment "Represents a data of 'Sensitive Data' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#FullName01
+
+:FullName01 a owl:NamedIndividual , data-topography:SensitiveData ;
+	data-topography:SensitiveDescription "Represents the full name of the Person of Interest" ;
+	data-topography:SensitiveInformation "John Doe" ;
+	data-topography:SensitiveTopic "Name" ;
+	rdfs:comment "Represents a data of 'Sensitive Data' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#FullName02
+
+:FullName02 a owl:NamedIndividual , data-topography:SensitiveData ;
+	data-topography:SensitiveDescription "Represents the full name of the Person of Interest" ;
+	data-topography:SensitiveInformation "Ruby Csak" ;
+	data-topography:SensitiveTopic "Name" ;
+	rdfs:comment "Represents a data of 'Sensitive Data' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#IdentificationNumber01
+
+:IdentificationNumber01 a owl:NamedIndividual , data-topography:SensitiveData ;
+	data-topography:SensitiveDescription "Represents the identificaiton number of the customer" ;
+	data-topography:SensitiveInformation "22" ;
+	data-topography:SensitiveTopic "Identification Number" ;
+	rdfs:comment "Represents a data of 'Sensitive Data' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#IdentificationNumber02
+
+:IdentificationNumber02 a owl:NamedIndividual , data-topography:SensitiveData ;
+	data-topography:SensitiveDescription "Represents the identificaiton number of the customer" ;
+	data-topography:SensitiveInformation "11" ;
+	data-topography:SensitiveTopic "Identification Number" ;
+	rdfs:comment "Represents a data of 'Sensitive Data' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#JohnDoe
+
+:JohnDoe a owl:NamedIndividual , actors-topography:PersonOfInterest ;
+	:modifies :EmailAddress01 , :FullName01 , :IdentificationNumber01 , :PhysicalAddress01 , :TelephoneNumber01 ;
+	:provides :EmailAddress01 , :FullName01 , :IdentificationNumber01 , :PhysicalAddress01 , :TelephoneNumber01 ;
+	actors-topography:DataActions "Provide and have full access to his data" ;
+	actors-topography:Description "A customer to the bookstore that desires to take advantage of the offered subscription service" ;
+	actors-topography:Name "John Doe" ;
+	rdfs:comment "Represents an actor of 'Person of Interest' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#LarsRoss
+
+:LarsRoss a owl:NamedIndividual , actors-topography:SystemUsers ;
+	:accessDenied :EmailAddress01 , :EmailAddress02 , :FullName01 , :FullName02 , :IdentificationNumber01 , :IdentificationNumber02 , :PhysicalAddress01 , :PhysicalAddress02 , :PurchaseHistory01 , :PurchaseHistory02 , :TelephoneNumber01 , :TelephoneNumber02 ;
+	actors-topography:DataActions "Not allowed to performed any data actions, since his business operations are not related with any data processing or managing" ;
+	actors-topography:Description "A store keeper that his job duties are related only with the bookstore inventory" ;
+	actors-topography:Name "Lars Ross" ;
+	rdfs:comment "Represents an actor of 'System Users' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#MikeLux
+
+:MikeLux a owl:NamedIndividual , actors-topography:SystemUsers ;
+	:analyzes :PurchaseHistory01 , :PurchaseHistory02 ;
+	:modifies :EmailAddress01 , :EmailAddress02 , :FullName01 , :FullName02 , :IdentificationNumber01 , :IdentificationNumber02 , :PhysicalAddress01 , :PhysicalAddress02 , :PurchaseHistory01 , :PurchaseHistory02 , :TelephoneNumber01 , :TelephoneNumber02 ;
+	actors-topography:DataActions "Able to perform modification, update and analyze data actions to the customer’s data" ;
+	actors-topography:Description "As a Sales Person, he is responsible to interact with the customers and perform data actions that comply to their business job description" ;
+	actors-topography:Name "Mike Lux" ;
+	rdfs:comment "Represents an actor of 'System Users' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#PersonalDataProtectionCommissionerOffice
+
+:PersonalDataProtectionCommissionerOffice a owl:NamedIndividual , actors-topography:AuthorityRegulator ;
+	:manages :EmailAddress01 , :EmailAddress02 , :FullName01 , :FullName02 , :IdentificationNumber01 , :IdentificationNumber02 , :PhysicalAddress01 , :PhysicalAddress02 , :PurchaseHistory01 , :PurchaseHistory02 , :TelephoneNumber01 , :TelephoneNumber02 ;
+	actors-topography:DataActions "Responsible for managing the data, by observing and presercing the legitimate data cycle within the organization activities" ;
+	actors-topography:Description "It is responsible for the verification of the statutes and regulations that apply to the sensitive data processing." ;
+	actors-topography:Name "Personal Data Protection Commissioner Office" ;
+	rdfs:comment "Represents an actor of 'Authority Regulator' in the system."@en .
+
+_:genid10 a owl:Axiom ;
+	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
+	owl:annotatedProperty :manages ;
+	owl:annotatedTarget :PhysicalAddress02 ;
+	:securityEnchancement "AccessToken" .
+
+_:genid11 a owl:Axiom ;
+	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
+	owl:annotatedProperty :manages ;
+	owl:annotatedTarget :PurchaseHistory01 ;
+	:securityEnchancement "AccessToken" .
+
+_:genid12 a owl:Axiom ;
+	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
+	owl:annotatedProperty :manages ;
+	owl:annotatedTarget :PurchaseHistory02 ;
+	:securityEnchancement "AccessToken" .
+
+_:genid13 a owl:Axiom ;
+	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
+	owl:annotatedProperty :manages ;
+	owl:annotatedTarget :TelephoneNumber01 ;
+	:securityEnchancement "AccessToken" .
+
+_:genid14 a owl:Axiom ;
+	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
+	owl:annotatedProperty :manages ;
+	owl:annotatedTarget :TelephoneNumber02 ;
+	:securityEnchancement "AccessToken" .
+
+_:genid3 a owl:Axiom ;
+	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
+	owl:annotatedProperty :manages ;
+	owl:annotatedTarget :EmailAddress01 ;
+	:securityEnchancement "AccessToken" .
+
+_:genid4 a owl:Axiom ;
+	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
+	owl:annotatedProperty :manages ;
+	owl:annotatedTarget :EmailAddress02 ;
+	:securityEnchancement "AccessToken" .
+
+_:genid5 a owl:Axiom ;
+	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
+	owl:annotatedProperty :manages ;
+	owl:annotatedTarget :FullName01 ;
+	:securityEnchancement "AccessToken" .
+
+_:genid6 a owl:Axiom ;
+	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
+	owl:annotatedProperty :manages ;
+	owl:annotatedTarget :FullName02 ;
+	:securityEnchancement "AccessToken" .
+
+_:genid7 a owl:Axiom ;
+	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
+	owl:annotatedProperty :manages ;
+	owl:annotatedTarget :IdentificationNumber01 ;
+	:securityEnchancement "AccessToken" .
+
+_:genid8 a owl:Axiom ;
+	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
+	owl:annotatedProperty :manages ;
+	owl:annotatedTarget :IdentificationNumber02 ;
+	:securityEnchancement "AccessToken" .
+
+_:genid9 a owl:Axiom ;
+	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
+	owl:annotatedProperty :manages ;
+	owl:annotatedTarget :PhysicalAddress01 ;
+	:securityEnchancement "AccessToken" .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#PhysicalAddress01
+
+:PhysicalAddress01 a owl:NamedIndividual , data-topography:SensitiveData ;
+	data-topography:SensitiveDescription "Represents the physical address of the customer" ;
+	data-topography:SensitiveInformation "Up Town Avenue" ;
+	data-topography:SensitiveTopic "Physical Address" ;
+	rdfs:comment "Represents a data of 'Sensitive Data' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#PhysicalAddress02
+
+:PhysicalAddress02 a owl:NamedIndividual , data-topography:SensitiveData ;
+	data-topography:SensitiveDescription "Represents the physical address of the customer" ;
+	data-topography:SensitiveInformation "Down Town Street" ;
+	data-topography:SensitiveTopic "Physical Address" ;
+	rdfs:comment "Represents a data of 'Sensitive Data' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#PurchaseHistory01
+
+:PurchaseHistory01 a owl:NamedIndividual , data-topography:RegularData ;
+	data-topography:RegularDescription "Represents the purchase history of an anonymized customer" ;
+	data-topography:RegularInformation "Designing your computer setup" ;
+	data-topography:RegularTopic "Book Title" ;
+	rdfs:comment "Represents a data of 'Regular Data' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#PurchaseHistory02
+
+:PurchaseHistory02 a owl:NamedIndividual , data-topography:RegularData ;
+	data-topography:RegularDescription "Represents the purchase history of an anonymized customer" ;
+	data-topography:RegularInformation "A book about science" ;
+	data-topography:RegularTopic "Book Title" ;
+	rdfs:comment "Represents a data of 'Regular Data' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#RubyCsak
+
+:RubyCsak a owl:NamedIndividual , actors-topography:PersonOfInterest ;
+	:modifies :EmailAddress02 , :FullName02 , :IdentificationNumber02 , :PhysicalAddress02 , :TelephoneNumber02 ;
+	:provides :EmailAddress02 , :FullName02 , :IdentificationNumber02 , :PhysicalAddress02 , :TelephoneNumber02 ;
+	actors-topography:DataActions "Provide and have full access to her data" ;
+	actors-topography:Description "A customer to the bookstore that desires to take advantage of the offered subscription service" ;
+	actors-topography:Name "Ruby Csak" ;
+	rdfs:comment "Represents an actor of 'Person of Interest' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#TelephoneNumber01
+
+:TelephoneNumber01 a owl:NamedIndividual , data-topography:SensitiveData ;
+	data-topography:SensitiveDescription "Represents the telephone number of the customer" ;
+	data-topography:SensitiveInformation "1234" ;
+	data-topography:SensitiveTopic "Telephone Number" ;
+	rdfs:comment "Represents a data of 'Sensitive Data' in the system."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-bookstoreScenario#TelephoneNumber02
+
+:TelephoneNumber02 a owl:NamedIndividual , data-topography:SensitiveData ;
+	data-topography:SensitiveDescription "Represents the telephone number of the customer" ;
+	data-topography:SensitiveInformation "7890" ;
+	data-topography:SensitiveTopic "Telephone Number" ;
+	rdfs:comment "Represents a data of 'Sensitive Data' in the system."@en .
+# 
+# Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
