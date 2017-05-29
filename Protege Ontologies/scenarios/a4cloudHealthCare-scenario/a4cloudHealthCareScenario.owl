@@ -1,13 +1,13 @@
-@prefix : <http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#> .
+@prefix : <http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix data-topography: <http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#> .
-@prefix actors-topography: <http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#> .
+@prefix data-ttl: <http://www.semanticweb.org/jioannou/ontologies/2017/2/data-ttl#> .
+@prefix actors-ttl: <http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#> .
 
-<http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario> a owl:Ontology ;
+<http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario> a owl:Ontology ;
 	rdfs:comment "The 'a4cloudHealthCareScenario' ontology describes the relationships that can be generated between the actors that interact with the service and data (Regular and Sensitive Data). Through this scenario, actors and data classifications are utilized in order to portray the respective service behavior."@en .
 # 
 # 
@@ -18,65 +18,65 @@
 # #################################################################
 # 
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#DataActions
-
-actors-topography:DataActions a owl:AnnotationProperty ;
-	rdfs:comment "Represents all actions that an actor can perform."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#Description
-
-actors-topography:Description a owl:AnnotationProperty ;
-	rdfs:comment "Represents a data property of the description that describes further an actor's purpose."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#Name
-
-actors-topography:Name a owl:AnnotationProperty ;
-	rdfs:comment "Represents a data property of the actor's full name."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#RegularDescription
-
-data-topography:RegularDescription a owl:AnnotationProperty ;
-	rdfs:comment "Represents a data property of the Regular data description. Describes the regular data entry."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#RegularInformation
-
-data-topography:RegularInformation a owl:AnnotationProperty ;
-	rdfs:comment "Represents a data property of the Regular data information. Defines the Regular information of the specific data entry."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#RegularTopic
-
-data-topography:RegularTopic a owl:AnnotationProperty ;
-	rdfs:comment "Represents a data property of the Regular data topic. Defines the Regular data entry."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#SensitiveDescription
-
-data-topography:SensitiveDescription a owl:AnnotationProperty ;
-	rdfs:comment "Represents a data property of the sensitive data description. Describes the sensitive data entry."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#SensitiveInformation
-
-data-topography:SensitiveInformation a owl:AnnotationProperty ;
-	rdfs:comment "Represents a data property of the sensitive data information. Defines the sensitive information of the specific data entry."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#SensitiveTopic
-
-data-topography:SensitiveTopic a owl:AnnotationProperty ;
-	rdfs:comment "Represents a data property of the sensitive data topic. Defines the sensitive data entry."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#retentionPeriod
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#retentionPeriod
 
 :retentionPeriod a owl:AnnotationProperty ;
 	rdfs:comment "Defines the allowed time that an actor is able to the perform the respective data action"@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#securityEnchancement
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#securityEnchancement
 
 :securityEnchancement a owl:AnnotationProperty ;
 	rdfs:comment "Defines the security enchancement (security protocol) that is applied on a data action"@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#useIntention
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#useIntention
 
 :useIntention a owl:AnnotationProperty ;
 	rdfs:comment "Defines the intentions usage of an actor in respect to a data action"@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#DataActions
+
+actors-ttl:DataActions a owl:AnnotationProperty ;
+	rdfs:comment "Represents all actions that an actor can perform."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#Description
+
+actors-ttl:Description a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the description that describes further an actor's purpose."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#Name
+
+actors-ttl:Name a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the actor's full name."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-ttl#RegularDescription
+
+data-ttl:RegularDescription a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the Regular data description. Describes the regular data entry."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-ttl#RegularInformation
+
+data-ttl:RegularInformation a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the Regular data information. Defines the Regular information of the specific data entry."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-ttl#RegularTopic
+
+data-ttl:RegularTopic a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the Regular data topic. Defines the Regular data entry."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-ttl#SensitiveDescription
+
+data-ttl:SensitiveDescription a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the sensitive data description. Describes the sensitive data entry."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-ttl#SensitiveInformation
+
+data-ttl:SensitiveInformation a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the sensitive data information. Defines the sensitive information of the specific data entry."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-ttl#SensitiveTopic
+
+data-ttl:SensitiveTopic a owl:AnnotationProperty ;
+	rdfs:comment "Represents a data property of the sensitive data topic. Defines the sensitive data entry."@en .
 # 
 # 
 # 
@@ -87,79 +87,98 @@ data-topography:SensitiveTopic a owl:AnnotationProperty ;
 # #################################################################
 # 
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#accessDenied
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#Correlation
+
+:Correlation a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#accessDenied
 
 :accessDenied a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'Access Denied' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#analyzes
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#analyzes
 
 :analyzes a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'Analyzes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#distributes
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#distributes
 
 :distributes a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'Distributes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#manages
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#manages
 
 :manages a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'Manages' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#modifies
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#modifies
 
 :modifies a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'Analyzes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#notAnalyzes
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#notAnalyzes
 
 :notAnalyzes a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'notAnalyzes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#notDistributes
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#notDistributes
 
 :notDistributes a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'notDistributes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#notManages
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#notManages
 
 :notManages a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'notManages' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#notModifies
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#notModifies
 
 :notModifies a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'notModifies' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#notProcesses
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#notProcesses
 
 :notProcesses a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'notProcesses' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#notProvides
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#notProvides
 
 :notProvides a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'notProvides' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#notStorages
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#notStorages
 
 :notStorages a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'notStorages' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#processes
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#processes
 
 :processes a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'Processes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#provides
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#provides
 
 :provides a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'Provides' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#storages
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#storages
 
 :storages a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Correlation ;
 	rdfs:comment "Represents an action of type 'Storages' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # 
@@ -171,33 +190,33 @@ data-topography:SensitiveTopic a owl:AnnotationProperty ;
 # #################################################################
 # 
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#AuthorisedPerson
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#AuthorisedPerson
 
-actors-topography:AuthorisedPerson a owl:Class .
+actors-ttl:AuthorisedPerson a owl:Class .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#AuthorityRegulator
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#AuthorityRegulator
 
-actors-topography:AuthorityRegulator a owl:Class .
+actors-ttl:AuthorityRegulator a owl:Class .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#PersonOfInterest
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#PersonOfInterest
 
-actors-topography:PersonOfInterest a owl:Class .
+actors-ttl:PersonOfInterest a owl:Class .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#SystemUsers
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#SystemUsers
 
-actors-topography:SystemUsers a owl:Class .
+actors-ttl:SystemUsers a owl:Class .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-topography#ThirdPartyEndUsers
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#ThirdPartyEndUsers
 
-actors-topography:ThirdPartyEndUsers a owl:Class .
+actors-ttl:ThirdPartyEndUsers a owl:Class .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#RegularData
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-ttl#RegularData
 
-data-topography:RegularData a owl:Class .
+data-ttl:RegularData a owl:Class .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-topography#SensitiveData
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/data-ttl#SensitiveData
 
-data-topography:SensitiveData a owl:Class .
+data-ttl:SensitiveData a owl:Class .
 # 
 # 
 # 
@@ -208,46 +227,46 @@ data-topography:SensitiveData a owl:Class .
 # #################################################################
 # 
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#Age
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#Age
 
-:Age a owl:NamedIndividual , data-topography:SensitiveData ;
-	data-topography:SensitiveDescription "Represents the Age of the Person of Interest" ;
-	data-topography:SensitiveInformation "61" ;
-	data-topography:SensitiveTopic "Age" ;
+:Age a owl:NamedIndividual , data-ttl:SensitiveData ;
+	data-ttl:SensitiveDescription "Represents the Age of the Person of Interest" ;
+	data-ttl:SensitiveInformation "61" ;
+	data-ttl:SensitiveTopic "Age" ;
 	rdfs:comment "Represents a data classification in the system."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#BloodGlucose
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#BloodGlucose
 
-:BloodGlucose a owl:NamedIndividual , data-topography:RegularData ;
-	data-topography:RegularDescription "Represents the Blood Glucose of the Person of Interest" ;
-	data-topography:RegularInformation "74" ;
-	data-topography:RegularTopic "Blood Glucose" ;
+:BloodGlucose a owl:NamedIndividual , data-ttl:RegularData ;
+	data-ttl:RegularDescription "Represents the Blood Glucose of the Person of Interest" ;
+	data-ttl:RegularInformation "74" ;
+	data-ttl:RegularTopic "Blood Glucose" ;
 	rdfs:comment "Represents a data classification in the system."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#BloodPressure
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#BloodPressure
 
-:BloodPressure a owl:NamedIndividual , data-topography:RegularData ;
-	data-topography:RegularDescription "Represents the Blood Pressure of the Person of Interest" ;
-	data-topography:RegularInformation "45 54" ;
-	data-topography:RegularTopic "Blood Pressure" ;
+:BloodPressure a owl:NamedIndividual , data-ttl:RegularData ;
+	data-ttl:RegularDescription "Represents the Blood Pressure of the Person of Interest" ;
+	data-ttl:RegularInformation "45 54" ;
+	data-ttl:RegularTopic "Blood Pressure" ;
 	rdfs:comment "Represents a data classification in the system."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#BodyTemperature
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#BodyTemperature
 
-:BodyTemperature a owl:NamedIndividual , data-topography:RegularData ;
-	data-topography:RegularDescription "Represents the Body Temperature of the Person of Interest" ;
-	data-topography:RegularInformation "37" ;
-	data-topography:RegularTopic "Body Temperature" ;
+:BodyTemperature a owl:NamedIndividual , data-ttl:RegularData ;
+	data-ttl:RegularDescription "Represents the Body Temperature of the Person of Interest" ;
+	data-ttl:RegularInformation "37" ;
+	data-ttl:RegularTopic "Body Temperature" ;
 	rdfs:comment "Represents a data classification in the system."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#Caregiver
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#Caregiver
 
-:Caregiver a owl:NamedIndividual , actors-topography:SystemUsers ;
+:Caregiver a owl:NamedIndividual , actors-ttl:SystemUsers ;
 	:modifies :BloodGlucose , :BloodPressure , :BodyTemperature , :MedicalRecord , :PulseOximetry , :RespirationRate ;
 	:processes :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :MedicalRecord , :PulseOximetry , :RespirationRate ;
-	actors-topography:DataActions "Able to process and modify the medical record and collected data as part of his job description" ;
-	actors-topography:Description "A caregiver that takes care the elderly patient and updates his medical records and data" ;
-	actors-topography:Name "Dr. Lars Fix" ;
+	actors-ttl:DataActions "Able to process and modify the medical record and collected data as part of his job description" ;
+	actors-ttl:Description "A caregiver that takes care the elderly patient and updates his medical records and data" ;
+	actors-ttl:Name "Dr. Lars Fix" ;
 	rdfs:comment "Represents an actor of 'System Users' in the system."@en .
 
 _:genid1 a owl:Axiom ;
@@ -362,13 +381,13 @@ _:genid9 a owl:Axiom ;
 	:securityEnchancement "Access Token & PAP 2-way Handshake" ;
 	:useIntention "Processess the patient's 'BloodPressure' along with his other readings in order to validate his health status" .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#DataAnalysisCompany
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#DataAnalysisCompany
 
-:DataAnalysisCompany a owl:NamedIndividual , actors-topography:ThirdPartyEndUsers ;
+:DataAnalysisCompany a owl:NamedIndividual , actors-ttl:ThirdPartyEndUsers ;
 	:analyzes :MedicalRecord ;
-	actors-topography:DataActions "Able to analyze the anonymized medical records of the patients" ;
-	actors-topography:Description "Analyze the anonymized medical records for analysis purposes" ;
-	actors-topography:Name "Analysis Data Company Ltd" ;
+	actors-ttl:DataActions "Able to analyze the anonymized medical records of the patients" ;
+	actors-ttl:Description "Analyze the anonymized medical records for analysis purposes" ;
+	actors-ttl:Name "Analysis Data Company Ltd" ;
 	rdfs:comment "Represents an actor of 'Third Party End Users' in the system."@en .
 
 _:genid15 a owl:Axiom ;
@@ -379,14 +398,14 @@ _:genid15 a owl:Axiom ;
 	:securityEnchancement "Access Token & PAP 2-way Handshake" ;
 	:useIntention "Perform data analysis operations based on 'MediclaRecord' data" .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#DataStorage
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#DataStorage
 
-:DataStorage a owl:NamedIndividual , actors-topography:SystemUsers ;
+:DataStorage a owl:NamedIndividual , actors-ttl:SystemUsers ;
 	:distributes :BloodGlucose , :BloodPressure , :BodyTemperature , :MedicalRecord , :PulseOximetry , :RespirationRate ;
 	:storages :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :MedicalRecord , :PulseOximetry , :RespirationRate ;
-	actors-topography:DataActions "The system department that is able to storage all data" ;
-	actors-topography:Description "Able to storage the data that were collected, processed and provided into the system" ;
-	actors-topography:Name "Data Storage Department" ;
+	actors-ttl:DataActions "The system department that is able to storage all data" ;
+	actors-ttl:Description "Able to storage the data that were collected, processed and provided into the system" ;
+	actors-ttl:Name "Data Storage Department" ;
 	rdfs:comment "Represents an actor of 'System Users' in the system."@en .
 
 _:genid16 a owl:Axiom ;
@@ -509,21 +528,21 @@ _:genid30 a owl:Axiom ;
 	:securityEnchancement "TAPE" ;
 	:useIntention "Storages the provided data information" .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#FullName
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#FullName
 
-:FullName a owl:NamedIndividual , data-topography:SensitiveData ;
-	data-topography:SensitiveDescription "Represents the Full Name of the Person of Interest" ;
-	data-topography:SensitiveInformation "John Doe" ;
-	data-topography:SensitiveTopic "FullName" ;
+:FullName a owl:NamedIndividual , data-ttl:SensitiveData ;
+	data-ttl:SensitiveDescription "Represents the Full Name of the Person of Interest" ;
+	data-ttl:SensitiveInformation "John Doe" ;
+	data-ttl:SensitiveTopic "FullName" ;
 	rdfs:comment "Represents a data classification in the system."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#InsuranceCompany
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#InsuranceCompany
 
-:InsuranceCompany a owl:NamedIndividual , actors-topography:ThirdPartyEndUsers ;
+:InsuranceCompany a owl:NamedIndividual , actors-ttl:ThirdPartyEndUsers ;
 	:analyzes :BloodGlucose , :BloodPressure , :BodyTemperature , :PulseOximetry , :RespirationRate ;
-	actors-topography:DataActions "Analyze the anonymized data that were collected from the sensors" ;
-	actors-topography:Description "Interested to the data that are collected by the sensors in order to estimate the risk of falls" ;
-	actors-topography:Name "Insurance Company Ltd" ;
+	actors-ttl:DataActions "Analyze the anonymized data that were collected from the sensors" ;
+	actors-ttl:Description "Interested to the data that are collected by the sensors in order to estimate the risk of falls" ;
+	actors-ttl:Name "Insurance Company Ltd" ;
 	rdfs:comment "Represents an actor of 'Third Party End Users' in the system."@en .
 
 _:genid31 a owl:Axiom ;
@@ -566,14 +585,14 @@ _:genid35 a owl:Axiom ;
 	:securityEnchancement "Access Token & PAP 2-way Handshake" ;
 	:useIntention "Analyze for estimating the risk of fails based on 'RespirationRate' factor" .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#JasmineDoe
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#JasmineDoe
 
-:JasmineDoe a owl:NamedIndividual , actors-topography:AuthorisedPerson ;
+:JasmineDoe a owl:NamedIndividual , actors-ttl:AuthorisedPerson ;
 	:modifies :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :PulseOximetry , :RespirationRate ;
 	:provides :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :PulseOximetry , :RespirationRate ;
-	actors-topography:DataActions "Able to provide and modify the respective data related to the elderly relative patient" ;
-	actors-topography:Description "A relative of the elderly patient that is able to provide additional data to the system" ;
-	actors-topography:Name "Jasmine Doe" ;
+	actors-ttl:DataActions "Able to provide and modify the respective data related to the elderly relative patient" ;
+	actors-ttl:Description "A relative of the elderly patient that is able to provide additional data to the system" ;
+	actors-ttl:Name "Jasmine Doe" ;
 	rdfs:comment "Represents an actor of 'Authorised Person' in the system."@en .
 
 _:genid36 a owl:Axiom ;
@@ -704,14 +723,14 @@ _:genid51 a owl:Axiom ;
 	:securityEnchancement "Access Token & PAP 2-way Handshake" ;
 	:useIntention "Able to provide additional data information as authorised by the righful owner" .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#JohnDoe
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#JohnDoe
 
-:JohnDoe a owl:NamedIndividual , actors-topography:PersonOfInterest ;
+:JohnDoe a owl:NamedIndividual , actors-ttl:PersonOfInterest ;
 	:modifies :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :PulseOximetry , :RespirationRate ;
 	:provides :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :PulseOximetry , :RespirationRate ;
-	actors-topography:DataActions "Able to provide and modify his personal data information" ;
-	actors-topography:Description "The elderly person that is registered to the system and provides medical data through the sensors or any other means" ;
-	actors-topography:Name "John Doe" ;
+	actors-ttl:DataActions "Able to provide and modify his personal data information" ;
+	actors-ttl:Description "The elderly person that is registered to the system and provides medical data through the sensors or any other means" ;
+	actors-ttl:Name "John Doe" ;
 	rdfs:comment "Represents an actor of 'Person of Interest' in the system."@en .
 
 _:genid52 a owl:Axiom ;
@@ -840,38 +859,38 @@ _:genid67 a owl:Axiom ;
 	:securityEnchancement "TinySec-AE" ;
 	:useIntention "Provides 'RespirationRate' data through the sensors" .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#Location
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#Location
 
-:Location a owl:NamedIndividual , data-topography:SensitiveData ;
-	data-topography:SensitiveDescription "Represents the Location of the Person of Interest" ;
-	data-topography:SensitiveInformation "45 50 12 32" ;
-	data-topography:SensitiveTopic "Location" ;
+:Location a owl:NamedIndividual , data-ttl:SensitiveData ;
+	data-ttl:SensitiveDescription "Represents the Location of the Person of Interest" ;
+	data-ttl:SensitiveInformation "45 50 12 32" ;
+	data-ttl:SensitiveTopic "Location" ;
 	rdfs:comment "Represents a data classification in the system."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#MedNetDevelopmentCompany
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#MedNetDevelopmentCompany
 
-:MedNetDevelopmentCompany a owl:NamedIndividual , actors-topography:ThirdPartyEndUsers ;
+:MedNetDevelopmentCompany a owl:NamedIndividual , actors-ttl:ThirdPartyEndUsers ;
 	:accessDenied :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :MedicalRecord , :PulseOximetry , :RespirationRate ;
-	actors-topography:DataActions "Not allowed to perform any data actions to the system" ;
-	actors-topography:Description "It is the MedNet platform provider that the sensor data collection and processing will interact with" ;
-	actors-topography:Name "MedNet Development Company" ;
+	actors-ttl:DataActions "Not allowed to perform any data actions to the system" ;
+	actors-ttl:Description "It is the MedNet platform provider that the sensor data collection and processing will interact with" ;
+	actors-ttl:Name "MedNet Development Company" ;
 	rdfs:comment "Represents an actor of 'Third Party End Users' in the system."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#MedicalRecord
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#MedicalRecord
 
-:MedicalRecord a owl:NamedIndividual , data-topography:RegularData ;
-	data-topography:RegularDescription "Represents the Medical Record of the Person of Interest" ;
-	data-topography:RegularInformation "Medical Record Information" ;
-	data-topography:RegularTopic "Medical Record" ;
+:MedicalRecord a owl:NamedIndividual , data-ttl:RegularData ;
+	data-ttl:RegularDescription "Represents the Medical Record of the Person of Interest" ;
+	data-ttl:RegularInformation "Medical Record Information" ;
+	data-ttl:RegularTopic "Medical Record" ;
 	rdfs:comment "Represents a data classification in the system."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#NorwegianDataProtectionAuthority
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#NorwegianDataProtectionAuthority
 
-:NorwegianDataProtectionAuthority a owl:NamedIndividual , actors-topography:AuthorityRegulator ;
+:NorwegianDataProtectionAuthority a owl:NamedIndividual , actors-ttl:AuthorityRegulator ;
 	:manages :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :MedicalRecord , :PulseOximetry , :RespirationRate ;
-	actors-topography:DataActions "Manages the data classifications for ensuring their validity based on the legislation" ;
-	actors-topography:Description "It is responsible for the verification of the statutes and regulations that apply to the data actions of each actor based on their business operation description" ;
-	actors-topography:Name "Norwegian Data Protection Authority" ;
+	actors-ttl:DataActions "Manages the data classifications for ensuring their validity based on the legislation" ;
+	actors-ttl:Description "It is responsible for the verification of the statutes and regulations that apply to the data actions of each actor based on their business operation description" ;
+	actors-ttl:Name "Norwegian Data Protection Authority" ;
 	rdfs:comment "Represents an actor of 'Authority Regulator' in the system."@en .
 
 _:genid68 a owl:Axiom ;
@@ -937,14 +956,14 @@ _:genid76 a owl:Axiom ;
 	:securityEnchancement "PAP 2-way Handshake" ;
 	:useIntention "Ensure that any proceedings applied on the data 'RespirationRate' are fulfilled within the legal requirements and the actors' agreed privacy policies" .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#Pharmacies
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#Pharmacies
 
-:Pharmacies a owl:NamedIndividual , actors-topography:SystemUsers ;
+:Pharmacies a owl:NamedIndividual , actors-ttl:SystemUsers ;
 	:modifies :MedicalRecord ;
 	:processes :Age , :FullName , :MedicalRecord ;
-	actors-topography:DataActions "Able to process the medical record, along with the full name and age of the patient for better drug administration and data update" ;
-	actors-topography:Description "Responsible for providing the necessary drugs to the patient based on his medical records" ;
-	actors-topography:Name "Pharmacy One Ltd" ;
+	actors-ttl:DataActions "Able to process the medical record, along with the full name and age of the patient for better drug administration and data update" ;
+	actors-ttl:Description "Responsible for providing the necessary drugs to the patient based on his medical records" ;
+	actors-ttl:Name "Pharmacy One Ltd" ;
 	rdfs:comment "Represents an actor of 'System Users' in the system."@en .
 
 _:genid77 a owl:Axiom ;
@@ -979,14 +998,14 @@ _:genid80 a owl:Axiom ;
 	:securityEnchancement "Access Token & PAP 2-way Handshake" ;
 	:useIntention "Studies the patient's medical record to determine the medication that is needed" .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#Physician
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#Physician
 
-:Physician a owl:NamedIndividual , actors-topography:SystemUsers ;
+:Physician a owl:NamedIndividual , actors-ttl:SystemUsers ;
 	:modifies :BloodGlucose , :BloodPressure , :BodyTemperature , :MedicalRecord , :PulseOximetry , :RespirationRate ;
 	:processes :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :MedicalRecord , :PulseOximetry , :RespirationRate ;
-	actors-topography:DataActions "Able to process and modify the medical record and collected data as part of her job description" ;
-	actors-topography:Description "A physician that takes care the elderly patient and updates his medical records and data" ;
-	actors-topography:Name "Dr. Kate Ruby" ;
+	actors-ttl:DataActions "Able to process and modify the medical record and collected data as part of her job description" ;
+	actors-ttl:Description "A physician that takes care the elderly patient and updates his medical records and data" ;
+	actors-ttl:Name "Dr. Kate Ruby" ;
 	rdfs:comment "Represents an actor of 'System Users' in the system."@en .
 
 _:genid81 a owl:Axiom ;
@@ -1101,21 +1120,21 @@ _:genid94 a owl:Axiom ;
 	:securityEnchancement "Access Token & PAP 2-way Handshake" ;
 	:useIntention "Processess the patient's 'RespirationRate' along with his other readings in order to validate his health status" .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#PulseOximetry
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#PulseOximetry
 
-:PulseOximetry a owl:NamedIndividual , data-topography:RegularData ;
-	data-topography:RegularDescription "Represents the Pulse Oximetry of the Person of Interest" ;
-	data-topography:RegularInformation "24" ;
-	data-topography:RegularTopic "Pulse Oximetry" ;
+:PulseOximetry a owl:NamedIndividual , data-ttl:RegularData ;
+	data-ttl:RegularDescription "Represents the Pulse Oximetry of the Person of Interest" ;
+	data-ttl:RegularInformation "24" ;
+	data-ttl:RegularTopic "Pulse Oximetry" ;
 	rdfs:comment "Represents a data classification in the system."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#ResearchOrganization
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#ResearchOrganization
 
-:ResearchOrganization a owl:NamedIndividual , actors-topography:ThirdPartyEndUsers ;
+:ResearchOrganization a owl:NamedIndividual , actors-ttl:ThirdPartyEndUsers ;
 	:analyzes :MedicalRecord ;
-	actors-topography:DataActions "Able to analyze the anonymized medical records of the patients" ;
-	actors-topography:Description "Analyze the anonymized medical records for research purposes" ;
-	actors-topography:Name "Research Organization Ltd" ;
+	actors-ttl:DataActions "Able to analyze the anonymized medical records of the patients" ;
+	actors-ttl:Description "Analyze the anonymized medical records for research purposes" ;
+	actors-ttl:Name "Research Organization Ltd" ;
 	rdfs:comment "Represents an actor of 'Third Party End Users' in the system."@en .
 
 _:genid95 a owl:Axiom ;
@@ -1126,22 +1145,22 @@ _:genid95 a owl:Axiom ;
 	:securityEnchancement "Access Token & PAP 2-way Handshake" ;
 	:useIntention "Perform data analysis operations based on 'MediclaRecord' data for research purposes" .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#RespirationRate
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#RespirationRate
 
-:RespirationRate a owl:NamedIndividual , data-topography:RegularData ;
-	data-topography:RegularDescription "Represents the Respiration Rate of the Person of Interest" ;
-	data-topography:RegularInformation "94" ;
-	data-topography:RegularTopic "Respiration Rate" ;
+:RespirationRate a owl:NamedIndividual , data-ttl:RegularData ;
+	data-ttl:RegularDescription "Represents the Respiration Rate of the Person of Interest" ;
+	data-ttl:RegularInformation "94" ;
+	data-ttl:RegularTopic "Respiration Rate" ;
 	rdfs:comment "Represents a data classification in the system."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/privacyModule-a4cloudHealthCareScenario#SensorDataCollectionAndProcessing
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#SensorDataCollectionAndProcessing
 
-:SensorDataCollectionAndProcessing a owl:NamedIndividual , actors-topography:SystemUsers ;
+:SensorDataCollectionAndProcessing a owl:NamedIndividual , actors-ttl:SystemUsers ;
 	:modifies :BloodGlucose , :BloodPressure , :BodyTemperature , :Location , :PulseOximetry , :RespirationRate ;
 	:processes :BloodGlucose , :BloodPressure , :BodyTemperature , :PulseOximetry , :RespirationRate ;
-	actors-topography:DataActions "Able to modify and process the data collected from the sensor for further actions" ;
-	actors-topography:Description "The system department that is responsible for collecting and processing the sensor data" ;
-	actors-topography:Name "Sensor Data Collection and Processing Department" ;
+	actors-ttl:DataActions "Able to modify and process the data collected from the sensor for further actions" ;
+	actors-ttl:Description "The system department that is responsible for collecting and processing the sensor data" ;
+	actors-ttl:Name "Sensor Data Collection and Processing Department" ;
 	rdfs:comment "Represents an actor of 'System Users' in the system."@en .
 
 _:genid100 a owl:Axiom ;
@@ -1183,7 +1202,7 @@ _:genid104 a owl:Axiom ;
 	:retentionPeriod "4 hours per Day" ;
 	:securityEnchancement "n/a" ;
 	:useIntention "Able to process the patient's data that were collected through the sensors" .
-	
+
 _:genid105 a owl:Axiom ;
 	owl:annotatedSource :SensorDataCollectionAndProcessing ;
 	owl:annotatedProperty :processes ;
@@ -1191,7 +1210,7 @@ _:genid105 a owl:Axiom ;
 	:retentionPeriod "4 hours per Day" ;
 	:securityEnchancement "n/a" ;
 	:useIntention "Able to process the patient's data that were collected through the sensors" .
-	
+
 _:genid106 a owl:Axiom ;
 	owl:annotatedSource :SensorDataCollectionAndProcessing ;
 	owl:annotatedProperty :processes ;
@@ -1199,7 +1218,7 @@ _:genid106 a owl:Axiom ;
 	:retentionPeriod "4 hours per Day" ;
 	:securityEnchancement "n/a" ;
 	:useIntention "Able to process the patient's data that were collected through the sensors" .
-	
+
 _:genid96 a owl:Axiom ;
 	owl:annotatedSource :SensorDataCollectionAndProcessing ;
 	owl:annotatedProperty :modifies ;

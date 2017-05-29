@@ -1008,12 +1008,12 @@ var PrepResults = function () {
 			// setup nodes for data types
 			for (var dataId = 0; dataId < ontology.dataValue.length; dataId++) {
 				var typedAction = app.retrieveType(index, ontology.dataValue[dataId]);
-				nodes.push({ id: (dataId + 1), label: ontology.dataValue[dataId], shape: "box", color: typedAction === "Regular Data" ? "#b8d60e" : typedAction === "Sensitive Data" ? "#f4c242" : "#4682b4", font: { align: 'right' } });
+				nodes.push({ id: (dataId + 1), label: ontology.dataValue[dataId], shape: "box", color: typedAction === "Regular Data" ? "#b8d60e" : typedAction === "Sensitive Data" ? "#f4c242" : "#4682b4" });
 			}
 
 			// setup nodes for individuals
 			for (var individualId = 0; individualId < ontology.individuals.length; individualId++) {
-				nodes.push({ id: (nodes.length + 1), label: ontology.individuals[individualId].name, font: { align: 'left' } });
+				nodes.push({ id: (nodes.length + 1), label: ontology.individuals[individualId].name });
 			}
 
 			// setup edges between individuals and data types
@@ -1100,7 +1100,7 @@ var PrepResults = function () {
 			actionLabel += " (" + actionData.security + ")";
 		}
 
-		return { from: individualIndex, to: dataIndex, label: actionLabel, color: actionData.security !== "" ? "#900020" : "#787878", font: { align: 'horizontal' } };
+		return { from: individualIndex, to: dataIndex, label: actionLabel, color: actionData.security !== "" ? "#900020" : "#787878", font: { align: 'horizontal' }, length: 800 };
 	}
 
 	/**
