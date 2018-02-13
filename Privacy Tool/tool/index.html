@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Linked USDL - Privacy Module Tool</title>
+	<title>Linked USDL Privacy module - Tool</title>
 
 	<!-- Set up the css files -->
 	<link rel="stylesheet" type="text/css" href="style/css/main.css"></link>
@@ -59,7 +59,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-				<a class="navbar-brand">Linked USDL - Privacy Module</a>
+				<a class="navbar-brand">Linked USDL Privacy module</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav" id="navCollapsed">
@@ -76,7 +76,7 @@
 		<div class="row content">
 
 			<div class="col-sm-3 sidenav hidden-xs sidenav-left">
-				<h2>Linked USDL - Privacy Module</h2>
+				<h2>Linked USDL Privacy module</h2>
 				<ul class="nav nav-pills nav-stacked" id="navStacked">
 					<li class="sidenav-button active" id="dashboardButtonStacked"><a href="#dashboardContainer">Dashboard</a></li>
 					<li class="sidenav-button" id="toolButtonStacked"><a href="#toolContainer">Tool</a></li>
@@ -96,7 +96,7 @@
 					<h4>Privacy Module Tool</h4>
 					<hr>
 					<div id="innerToolContainer">
-						<label class="custom-title">Upload a few ontologies files*</label>
+						<label class="custom-title">Upload ontologies (files)*</label>
 						<label class="custom-note">*In the first line of the ontology files, the prefix should refer the ontology and not some other required one.</label>
 
 						<div class="drop-file-container">
@@ -118,7 +118,7 @@
 						</div>
 
 						<br>
-						<label class="custom-title">Available actions</label>
+						<label class="custom-title">Available actions**</label>
 						<div class="tool-buttons-container">
 							<button type="button" class="tool-button opacity-applied" id="verifyDataButton">Verify Data</button>
 							<img src="style/imgs/arrow-right.png" class="arrow-right-img opacity-applied" id="stepOne"></img>
@@ -126,7 +126,7 @@
 							<img src="style/imgs/arrow-right.png" class="arrow-right-img opacity-applied" id="stepTwo"></img>
 							<button type="button" class="tool-button opacity-applied" id="resultsButton">Results</button>
 						</div>
-
+						<label class="custom-note">**<i>Verify data</i> will validate the structure of the ontoogy files, <i>SPARQL</i> will execute the validation on the privacy policies, and <i>Results</i> will present the results in textual and graphical format.</label>
 						<br>
 
 						<div class="hidden-container" id="contentContainer">
@@ -229,7 +229,7 @@
 					<h4>About</h4>
 					<hr>
 					<h3>Linked USDL</h3>
-					<p class="about-text">Linked USDL (<a href="https://www.w3.org/2005/Incubator/usdl/" target="_blank">Unified Service Description Language</a>)
+					<p class="about-text">Linked USDL (initial version: <a href="https://www.w3.org/2005/Incubator/usdl/" target="_blank">Unified Service Description Language</a>)
 						was developed for describing business and software services using computer-readable and computer­‐understandable specifications
 						to make them tradable on the web/Internet, by comprising modules (e.g. <a href="https://github.com/linked-usdl/usdl-core"
 						 target="_blank">usdl-core</a>) where each module targeting a specific aspect.</p>
@@ -237,31 +237,31 @@
 					<p class="about-text">Alongside with the business specifications, privacy has a crucial role in the services description. Personal data agreement
 						properties should describe the privacy categorization that is applied onto the data that are provided, shared and utilized
 						within the service and provide answers to the following questions.</p>
-					<p class="about-sub-text">How data are categorized into information types</p>
-					<p class="about-sub-text">Which data is exactly collected (detailed specification)</p>
-					<p class="about-sub-text">Who can access these data (which information type)</p>
-					<p class="about-sub-text">Which actions are best used in order to describe each actor purpose (related with the data utlization and processing)</p>
+					<p class="about-sub-text">How are data categorized into information types?</p>
+					<p class="about-sub-text">Which data is exactly collected (detailed specification)?</p>
+					<p class="about-sub-text">Who can access these data (which information type)?</p>
+					<p class="about-sub-text">Which actions describe each actor purpose (related with the data utlization and processing)?</p>
 
 					<hr class="section-line-space">
-					<h3>Privacy Module for Linked USDL</h3>
+					<h3>Privacy module for Linked USDL</h3>
 
 					<p class="about-text">Through the implementation of the privacy module tool, we focused on tackling the privacy questions mentioned above
 						- by categorizing the data into two main types of information and extending the basic usdl-core module by defining
 						new business roles that describe each actor's role and interaction with the data at hand.</p>
 
-					<br>
+					<!--<br>
 					<div class="about-diagram-container">
 						<img class="about-diagram" src="style/imgs/privacy-topography-diagram.png"></img>
-					</div>
+					</div>-->
 
 					<br>
 					<p class="about-text">Data are categorized into two main types of information.</p>
-					<p class="about-sub-text">General knowledge information (Regular Data)</p>
-					<p class="about-sub-text">Sensitive personal information (Sensitive Data). These data describe the identity of the person of interest, by having
+					<p class="about-sub-text">General knowledge information (<i>Regular Data</i>)</p>
+					<p class="about-sub-text">Sensitive personal information (<i>Sensitive Data</i>). <!--These data describe the identity of the person of interest, by having
 						an immediate connection to his/her privacy information (such as racial/ethnic origin, political opinion, religious
 						beliefs, physical or mental health or condition, etc)</p>
 					<p class="about-text">Due to the fact that all data could be used for discrimination (and therefore result into becoming data of a private
-						nature) - it needs to be treated with greater care.</p>
+						nature) - it needs to be treated with greater care.</p>-->
 
 					<br>
 					<p class="about-text">Actors are the end users of the service and can be either human or computer entities.</p>
@@ -272,13 +272,13 @@
 						is strictly related from it)</p>
 					<p class="about-sub-text">Third-party users (the users that do not belong in the organization/system, where the Rightful owners provide directly
 						their information)</p>
-					<p class="about-inner-sub-text">Third-party providers (similar to the system end users that consist the 'initial'' service provider, the third-party
+					<p class="about-inner-sub-text">Third-party providers <!--(similar to the system end users that consist the 'initial'' service provider, the third-party
 						providers are considered both; an end user that utilizes the data from the initial service provider as fit based on
-						ther job context and restrictions and at the same time serves as an independent provider to other third-party users</p>
-					<p class="about-inner-sub-text">Third-party end users (the entities that do not belong in the organization and they utilize the information provided
-						to them as fit based on their job context and restrictions</p>
-					<p class="about-sub-text">Authority/Regulator (the organization that is responsible for the verification of the statutes and regulations that
-						apply to the data processing by the end users)</p>
+						ther job context and restrictions and at the same time serves as an independent provider to other third-party users--></p>
+					<p class="about-inner-sub-text">Third-party end users <!--(the entities that do not belong in the organization and they utilize the information provided
+						to them as fit based on their job context and restrictions)--></p>
+					<p class="about-sub-text">Authority/Regulator <!--(the organization that is responsible for the verification of the statutes and regulations that
+						apply to the data processing by the end users)--></p>
 
 					<br>
 					<p class="about-text">Actions are the available tasks that Actors can perform on the Data classifications based on their business scope and restrictions.</p>
@@ -311,7 +311,8 @@
 
 					<br>
 					<h4 class="about-explanatory-text"><small>*The tool was developed as a partial fulfillment of the thesis requirements for the <a href="https://www.cs.ucy.ac.cy" target="_blank">MSc Computer Science</a> 
-					Degree at the <a href="http://www.ucy.ac.cy" target="_blank">University of Cyprus</a>. It can be extended without prejudicing the rights of the original work's author.</small></h4>
+					Degree at the <a href="http://www.ucy.ac.cy" target="_blank">University of Cyprus</a>. It can be extended without prejudicing the rights of the original work's author. Linked USDL Privacy module is available 
+					on <a href="https://github.com/linked-usdl/usdl-privacy" target="_blank">GitHub repository</a><The /small></h4>
 				</div>
 				<!-- aboutContainer -->
 
