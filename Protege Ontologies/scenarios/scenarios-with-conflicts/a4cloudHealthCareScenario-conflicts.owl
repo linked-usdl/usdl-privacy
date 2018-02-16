@@ -87,98 +87,98 @@ data-ttl:SensitiveTopic a owl:AnnotationProperty ;
 # #################################################################
 # 
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#Correlation
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#Relation
 
-:Correlation a owl:ObjectProperty .
+:Relation a owl:ObjectProperty .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#accessDenied
 
 :accessDenied a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'Access Denied' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#analyzes
 
 :analyzes a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'Analyzes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#distributes
 
 :distributes a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'Distributes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#manages
 
 :manages a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'Manages' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#modifies
 
 :modifies a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'Analyzes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#notAnalyzes
 
 :notAnalyzes a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notAnalyzes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#notDistributes
 
 :notDistributes a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notDistributes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#notManages
 
 :notManages a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notManages' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#notModifies
 
 :notModifies a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notModifies' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#notProcesses
 
 :notProcesses a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notProcesses' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#notProvides
 
 :notProvides a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notProvides' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#notStorages
 
 :notStorages a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notStorages' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#processes
 
 :processes a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'Processes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#provides
 
 :provides a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'Provides' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#storages
 
 :storages a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Correlation ;
+	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'Storages' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # 
