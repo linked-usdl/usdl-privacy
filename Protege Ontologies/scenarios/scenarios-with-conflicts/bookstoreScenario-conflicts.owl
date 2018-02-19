@@ -109,11 +109,10 @@ data-ttl:SensitiveTopic a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'Distributes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#manages
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#maintains
 
-:manages a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'Manages' onto the data (Regular and Sensitive Data - where applicable)."@en .
+:maintains a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Relation .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#modifies
 
@@ -133,17 +132,22 @@ data-ttl:SensitiveTopic a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notDistributes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notManages
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notMaintains
 
-:notManages a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'notManages' onto the data (Regular and Sensitive Data - where applicable)."@en .
+:notMaintains a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Relation .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notModifies
 
 :notModifies a owl:ObjectProperty ;
 	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notModifies' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notOversees
+
+:notOversees a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Relation ;
+	rdfs:comment "Represents an action of type 'notOversees' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notProcesses
 
@@ -162,6 +166,12 @@ data-ttl:SensitiveTopic a owl:AnnotationProperty ;
 :notStorages a owl:ObjectProperty ;
 	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notStorages' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#oversees
+
+:oversees a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Relation ;
+	rdfs:comment "Represents an action of type 'Oversees' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#processes
 
@@ -326,7 +336,7 @@ _:genid2 a owl:Axiom ;
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#PersonalDataProtectionCommissionerOffice
 
 :PersonalDataProtectionCommissionerOffice a owl:NamedIndividual , actors-ttl:AuthorityRegulator ;
-	:manages :EmailAddress01 , :EmailAddress02 , :FullName01 , :FullName02 , :IdentificationNumber01 , :IdentificationNumber02 , :PhysicalAddress01 , :PhysicalAddress02 , :PurchaseHistory01 , :PurchaseHistory02 , :TelephoneNumber01 , :TelephoneNumber02 ;
+	:oversees :EmailAddress01 , :EmailAddress02 , :FullName01 , :FullName02 , :IdentificationNumber01 , :IdentificationNumber02 , :PhysicalAddress01 , :PhysicalAddress02 , :PurchaseHistory01 , :PurchaseHistory02 , :TelephoneNumber01 , :TelephoneNumber02 ;
 	actors-ttl:DataActions "Responsible for managing the data, by observing and presercing the legitimate data cycle within the organization activities" ;
 	actors-ttl:Description "It is responsible for the verification of the statutes and regulations that apply to the sensitive data processing." ;
 	actors-ttl:Name "Personal Data Protection Commissioner Office" ;
@@ -334,73 +344,73 @@ _:genid2 a owl:Axiom ;
 
 _:genid10 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :PhysicalAddress02 ;
 	:securityEnchancement "AccessToken" .
 
 _:genid11 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :PurchaseHistory01 ;
 	:securityEnchancement "AccessToken" .
 
 _:genid12 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :PurchaseHistory02 ;
 	:securityEnchancement "AccessToken" .
 
 _:genid13 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :TelephoneNumber01 ;
 	:securityEnchancement "AccessToken" .
 
 _:genid14 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :TelephoneNumber02 ;
 	:securityEnchancement "AccessToken" .
 
 _:genid3 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :EmailAddress01 ;
 	:securityEnchancement "AccessToken" .
 
 _:genid4 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :EmailAddress02 ;
 	:securityEnchancement "AccessToken" .
 
 _:genid5 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :FullName01 ;
 	:securityEnchancement "AccessToken" .
 
 _:genid6 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :FullName02 ;
 	:securityEnchancement "AccessToken" .
 
 _:genid7 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :IdentificationNumber01 ;
 	:securityEnchancement "AccessToken" .
 
 _:genid8 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :IdentificationNumber02 ;
 	:securityEnchancement "AccessToken" .
 
 _:genid9 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :PhysicalAddress01 ;
 	:securityEnchancement "AccessToken" .
 # 
@@ -462,4 +472,4 @@ _:genid9 a owl:Axiom ;
 	data-ttl:SensitiveTopic "Telephone Number" ;
 	rdfs:comment "Represents a data of 'Sensitive Data' in the system."@en .
 # 
-# Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
+# Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi

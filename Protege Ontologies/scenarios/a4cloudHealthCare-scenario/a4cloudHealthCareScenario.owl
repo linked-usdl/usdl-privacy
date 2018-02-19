@@ -109,11 +109,10 @@ data-ttl:SensitiveTopic a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'Distributes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#manages
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#maintains
 
-:manages a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'Manages' onto the data (Regular and Sensitive Data - where applicable)."@en .
+:maintains a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Relation .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#modifies
 
@@ -133,17 +132,22 @@ data-ttl:SensitiveTopic a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notDistributes' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#notManages
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#notMaintains
 
-:notManages a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'notManages' onto the data (Regular and Sensitive Data - where applicable)."@en .
+:notMaintains a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Relation .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#notModifies
 
 :notModifies a owl:ObjectProperty ;
 	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notModifies' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#notOversees
+
+:notOversees a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Relation ;
+	rdfs:comment "Represents an action of type 'notOversees' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#notProcesses
 
@@ -162,6 +166,12 @@ data-ttl:SensitiveTopic a owl:AnnotationProperty ;
 :notStorages a owl:ObjectProperty ;
 	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notStorages' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#oversees
+
+:oversees a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Relation ;
+	rdfs:comment "Represents an action of type 'Oversees' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#processes
 
@@ -887,71 +897,71 @@ _:genid67 a owl:Axiom ;
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#NorwegianDataProtectionAuthority
 
 :NorwegianDataProtectionAuthority a owl:NamedIndividual , actors-ttl:AuthorityRegulator ;
-	:manages :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :MedicalRecord , :PulseOximetry , :RespirationRate ;
-	actors-ttl:DataActions "Manages the data classifications for ensuring their validity based on the legislation" ;
+	:oversees :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :MedicalRecord , :PulseOximetry , :RespirationRate ;
+	actors-ttl:DataActions "Oversees the data classifications for ensuring their validity based on the legislation" ;
 	actors-ttl:Description "It is responsible for the verification of the statutes and regulations that apply to the data actions of each actor based on their business operation description" ;
 	actors-ttl:Name "Norwegian Data Protection Authority" ;
 	rdfs:comment "Represents an actor of 'Authority Regulator' in the system."@en .
 
 _:genid68 a owl:Axiom ;
 	owl:annotatedSource :NorwegianDataProtectionAuthority ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :Age ;
 	:securityEnchancement "PAP 2-way Handshake" ;
 	:useIntention "Ensure that any proceedings applied on the data 'Age' are fulfilled within the legal requirements and the actors' agreed privacy policies" .
 
 _:genid69 a owl:Axiom ;
 	owl:annotatedSource :NorwegianDataProtectionAuthority ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :BloodGlucose ;
 	:securityEnchancement "PAP 2-way Handshake" ;
 	:useIntention "Ensure that any proceedings applied on the data 'BloodGlucose' are fulfilled within the legal requirements and the actors' agreed privacy policies" .
 
 _:genid70 a owl:Axiom ;
 	owl:annotatedSource :NorwegianDataProtectionAuthority ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :BloodPressure ;
 	:securityEnchancement "PAP 2-way Handshake" ;
 	:useIntention "Ensure that any proceedings applied on the data 'BloodPressure' are fulfilled within the legal requirements and the actors' agreed privacy policies" .
 
 _:genid71 a owl:Axiom ;
 	owl:annotatedSource :NorwegianDataProtectionAuthority ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :BodyTemperature ;
 	:securityEnchancement "PAP 2-way Handshake" ;
 	:useIntention "Ensure that any proceedings applied on the data 'BodyTemperature' are fulfilled within the legal requirements and the actors' agreed privacy policies" .
 
 _:genid72 a owl:Axiom ;
 	owl:annotatedSource :NorwegianDataProtectionAuthority ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :FullName ;
 	:securityEnchancement "PAP 2-way Handshake" ;
 	:useIntention "Ensure that any proceedings applied on the data 'FullName' are fulfilled within the legal requirements and the actors' agreed privacy policies" .
 
 _:genid73 a owl:Axiom ;
 	owl:annotatedSource :NorwegianDataProtectionAuthority ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :Location ;
 	:securityEnchancement "PAP 2-way Handshake" ;
 	:useIntention "Ensure that any proceedings applied on the data 'Location' are fulfilled within the legal requirements and the actors' agreed privacy policies" .
 
 _:genid74 a owl:Axiom ;
 	owl:annotatedSource :NorwegianDataProtectionAuthority ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :MedicalRecord ;
 	:securityEnchancement "PAP 2-way Handshake" ;
 	:useIntention "Ensure that any proceedings applied on the data 'MedicalRecord' are fulfilled within the legal requirements and the actors' agreed privacy policies" .
 
 _:genid75 a owl:Axiom ;
 	owl:annotatedSource :NorwegianDataProtectionAuthority ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :PulseOximetry ;
 	:securityEnchancement "PAP 2-way Handshake" ;
 	:useIntention "Ensure that any proceedings applied on the data 'PulseOximetry' are fulfilled within the legal requirements and the actors' agreed privacy policies" .
 
 _:genid76 a owl:Axiom ;
 	owl:annotatedSource :NorwegianDataProtectionAuthority ;
-	owl:annotatedProperty :manages ;
+	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :RespirationRate ;
 	:securityEnchancement "PAP 2-way Handshake" ;
 	:useIntention "Ensure that any proceedings applied on the data 'RespirationRate' are fulfilled within the legal requirements and the actors' agreed privacy policies" .
@@ -1251,4 +1261,4 @@ _:genid99 a owl:Axiom ;
 	:securityEnchancement "Access Token & Kerberos" ;
 	:useIntention "Able to modify the patient's record based on the processed collected data" .
 # 
-# Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
+# Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
