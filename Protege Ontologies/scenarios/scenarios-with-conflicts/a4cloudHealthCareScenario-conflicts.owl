@@ -137,17 +137,17 @@ data-ttl:SensitiveTopic a owl:AnnotationProperty ;
 :notMaintains a owl:ObjectProperty ;
 	rdfs:subPropertyOf :Relation .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#notOversees
-
-:notOversees a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'notOversees' onto the data (Regular and Sensitive Data - where applicable)."@en .
-# 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#notModifies
 
 :notModifies a owl:ObjectProperty ;
 	rdfs:subPropertyOf :Relation ;
 	rdfs:comment "Represents an action of type 'notModifies' onto the data (Regular and Sensitive Data - where applicable)."@en .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#notOversees
+
+:notOversees a owl:ObjectProperty ;
+	rdfs:subPropertyOf :Relation ;
+	rdfs:comment "Represents an action of type 'notOversees' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#notProcesses
 
@@ -200,13 +200,13 @@ data-ttl:SensitiveTopic a owl:AnnotationProperty ;
 # #################################################################
 # 
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#AuthorisedPerson
-
-actors-ttl:AuthorisedPerson a owl:Class .
-# 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#AuthorityRegulator
 
 actors-ttl:AuthorityRegulator a owl:Class .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#AuthorizedPerson
+
+actors-ttl:AuthorizedPerson a owl:Class .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#PersonOfInterest
 
@@ -318,13 +318,13 @@ data-ttl:SensitiveData a owl:Class .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#JasmineDoe
 
-:JasmineDoe a owl:NamedIndividual , actors-ttl:AuthorisedPerson ;
+:JasmineDoe a owl:NamedIndividual , actors-ttl:AuthorizedPerson ;
 	:modifies :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :PulseOximetry , :RespirationRate ;
 	:provides :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :PulseOximetry , :RespirationRate ;
 	actors-ttl:DataActions "Able to provide and modify the respective data related to the elderly relative patient" ;
 	actors-ttl:Description "A relative of the elderly patient that is able to provide additional data to the system" ;
 	actors-ttl:Name "Jasmine Doe" ;
-	rdfs:comment "Represents an actor of 'Authorised Person' in the system."@en .
+	rdfs:comment "Represents an actor of 'Authorized Person' in the system."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#JohnDoe
 

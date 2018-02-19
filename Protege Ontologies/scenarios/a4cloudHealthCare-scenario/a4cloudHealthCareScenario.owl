@@ -200,13 +200,13 @@ data-ttl:SensitiveTopic a owl:AnnotationProperty ;
 # #################################################################
 # 
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#AuthorisedPerson
-
-actors-ttl:AuthorisedPerson a owl:Class .
-# 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#AuthorityRegulator
 
 actors-ttl:AuthorityRegulator a owl:Class .
+# 
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#AuthorizedPerson
+
+actors-ttl:AuthorizedPerson a owl:Class .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/actors-ttl#PersonOfInterest
 
@@ -597,7 +597,7 @@ _:genid35 a owl:Axiom ;
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario#JasmineDoe
 
-:JasmineDoe a owl:NamedIndividual , actors-ttl:AuthorisedPerson ;
+:JasmineDoe a owl:NamedIndividual , actors-ttl:AuthorizedPerson ;
 	:modifies :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :PulseOximetry , :RespirationRate ;
 	:provides :Age , :BloodGlucose , :BloodPressure , :BodyTemperature , :FullName , :Location , :PulseOximetry , :RespirationRate ;
 	actors-ttl:DataActions "Able to provide and modify the respective data related to the elderly relative patient" ;
