@@ -75,9 +75,13 @@ var SparqlStore = function () {
 		window.ontologies[posId].query = [];
 		window.ontologies[posId].query.push({});
 
-		// set up the store for the SPARQL results
+		// set up the store for the SPARQL results (based on allowed assertion actions)
 		window.ontologies[posId].sparqlResults = [];
 		window.ontologies[posId].sparqlResults.push({});
+
+		// set up the store for the SPARQL results (based on negative assertion actions)
+		window.ontologies[posId].negativeSparqlResults = [];
+		window.ontologies[posId].negativeSparqlResults.push({});
 
 		// set up the store for the SPARQL typed results
 		window.ontologies[posId].typedResults = [];
@@ -96,18 +100,20 @@ var SparqlStore = function () {
 			var retentionPeriod = prefixNaming + "retentionPeriod";
 
 			var formattedQuery = additionalPrefix + "SELECT ?entity ?data ?retentionPeriod ?useIntention ?securityEnchancement WHERE { ?entity " + action.toString() + " ?data . OPTIONAL { ?annotation owl:annotatedSource ?entity ; owl:annotatedProperty " + action.toString() + " ; owl:annotatedTarget ?data ; " + retentionPeriod.toString() + " ?retentionPeriod . } OPTIONAL { ?annotation owl:annotatedSource ?entity ; owl:annotatedProperty " + action.toString() + " ; owl:annotatedTarget ?data ; " + useIntention.toString() + " ?useIntention . } OPTIONAL { ?annotation owl:annotatedSource ?entity ; owl:annotatedProperty " + action.toString() + " ; owl:annotatedTarget ?data ; " + securityEnchancement.toString() + " ?securityEnchancement . } }";
-
-			window.ontologies[posId].query[actionId] = formattedQuery;
+			
+			window.ontologies[posId].query[actionId] = formattedQuery;			
 		}
+
+		// add another query to retrieve all negative assertion actions
+		var formattedNegativeQuery = additionalPrefix + "SELECT ?entity ?action ?data ?retentionPeriod ?useIntention ?securityEnchancement WHERE { ?assertion owl:sourceIndividual ?entity. ?assertion owl:assertionProperty ?action. ?assertion owl:targetIndividual ?data. }";
+		window.ontologies[posId].query[window.ontologies[posId].query.length] = formattedNegativeQuery;
 
 		// add another query to retrieve the named individuals only (ease the phase of analyzing the results later on)
 		var namedIndividualsQuery = additionalPrefix + "SELECT ?individual WHERE { ?individual rdf:type owl:NamedIndividual . } GROUP BY ?individual ORDER BY asc(?individual)";
-
 		window.ontologies[posId].query[window.ontologies[posId].query.length] = namedIndividualsQuery;
 
 		// add another query to retrieve the types of the individuals
 		var namedIndividualsQueryTyped = additionalPrefix + "SELECT ?individual ?type WHERE { ?individual rdf:type ?type FILTER ( !regex(str(?type),'owl','i') ) } ORDER BY asc(?individual)";
-
 		window.ontologies[posId].query[window.ontologies[posId].query.length] = namedIndividualsQueryTyped;
 
 		app.logMessage("Queries (SPARQL) were set up successfully: " + className);
@@ -136,11 +142,17 @@ var SparqlStore = function () {
 			store.load("text/turtle", window.ontologies[posIdAsync].fileContent.toString(), function (s, d) {
 				store.execute(window.ontologies[posIdAsync].query[queryIdAsync], function (success, results) {
 					if (queryIdAsync === window.ontologies[posIdAsync].query.length - 1) {
+						// retrieve types
 						window.ontologies[posIdAsync].typedResults[0] = loopOverTypedResults(results);
 					} else if (queryIdAsync === window.ontologies[posIdAsync].query.length - 2) {
-						window.ontologies[posIdAsync].namedIndividuals[0] = loopOverResults(results, true);
+						// retrieve individuals
+						window.ontologies[posIdAsync].namedIndividuals[0] = loopOverIndividuals(results);
+					} else if (queryIdAsync === window.ontologies[posIdAsync].query.length - 3) {
+						// retrieve negative assertion actions
+						window.ontologies[posIdAsync].negativeSparqlResults[0] = loopOverNegativePropertyAssertion(results);
 					} else {
-						window.ontologies[posIdAsync].sparqlResults[queryIdAsync] = loopOverResults(results, false);
+						// retrieve allowed assertion actions
+						window.ontologies[posIdAsync].sparqlResults[queryIdAsync] = loopOverResults(results);
 					}
 
 					queryIdAsync++;
@@ -181,18 +193,41 @@ var SparqlStore = function () {
 	 * Loop over the SPARQL results in order to simplify them (extract the individual values).
 	 * 
 	 * @param {Array} sparqlResults The SPARQL results array.
-	 * @param {Boolean} individuals Whether the results represent the named individuals, or not.
 	 * @return {Array} The simplified SPARQL results array.
 	 */
-	function loopOverResults(sparqlResults, individuals) {
-		if (individuals) {
-			for (var i = 0; i < sparqlResults.length; i++) {
-				sparqlResults[i].individual.value = sparqlResults[i].individual.value.split("#")[1];
-			}
-
-			return sparqlResults;
+	function loopOverIndividuals(sparqlResults, individuals) {
+		for (var i = 0; i < sparqlResults.length; i++) {
+			sparqlResults[i].individual.value = sparqlResults[i].individual.value.split("#")[1];
 		}
+	
+		return sparqlResults;
+	}
 
+	/**
+	 * Loop over the SPARQL results in order to simplify them (based on negative assertion extract the entity and data values per action).
+	 * 
+	 * @param {Array} sparqlResults The SPARQL results array.
+	 * @return {Array} The simplified SPARQL results array.
+	 */
+	function loopOverNegativePropertyAssertion(sparqlResults) {
+		if (sparqlResults !== undefined && sparqlResults !== null) {
+			for (var i = 0; i < sparqlResults.length; i++) {	
+				sparqlResults[i].action.value = sparqlResults[i].action.value.split("#")[1];
+				sparqlResults[i].entity.value = sparqlResults[i].entity.value.split("#")[1];
+				sparqlResults[i].data.value = sparqlResults[i].data.value.split("#")[1];
+			}
+		}
+		
+		return sparqlResults;
+	}
+
+	/**
+	 * Loop over the SPARQL results in order to simplify them (extract the entity and data values per action).
+	 * 
+	 * @param {Array} sparqlResults The SPARQL results array.
+	 * @return {Array} The simplified SPARQL results array.
+	 */
+	function loopOverResults(sparqlResults, negativePropertyAssertion) {
 		for (var i = 0; i < sparqlResults.length; i++) {
 			sparqlResults[i].entity.value = sparqlResults[i].entity.value.split("#")[1];
 			sparqlResults[i].data.value = sparqlResults[i].data.value.split("#")[1];
