@@ -933,10 +933,13 @@ var PrepResults = function () {
 		setTimeout(function () {
 			app.logMessage("\nProcessing results..");
 
+			// merge both SPARQL results (assertions based on allowed and negative actions)
+			mergeSparqlResults();
+
 			// setup the named individuals from the SPARQL results
 			sortIndividualNameSetup();
 
-			// setup the named individuals from the SPARQL results
+			// setup the individuals' actions from the SPARQL results
 			sortIndividualActionsSetup();
 
 			// update opacity and visibility from the next step (button)
@@ -1048,6 +1051,65 @@ var PrepResults = function () {
 		}
 	}
 
+	/*
+	 * Merges results from both SPARQL data sets.
+	 */
+	function mergeSparqlResults() {
+		// loop over the ontologies in order to merge the allowed and negative asserted actions
+		for (var ontologyNum = 0; ontologyNum < window.ontologies.length; ontologyNum++) {
+
+			// bubble sort the results based on the action
+			for (var outter = 0; outter < window.ontologies[ontologyNum].negativeSparqlResults[0].length; outter++) {
+				for (var inner = 1; inner < window.ontologies[ontologyNum].negativeSparqlResults[0].length - outter; inner++) {
+					var actionInner = window.ontologies[ontologyNum].negativeSparqlResults[0][inner];
+					var actionInnerMinusOne = window.ontologies[ontologyNum].negativeSparqlResults[0][inner-1];
+
+					if (actionInnerMinusOne.action.value > actionInner.action.value) {
+						window.ontologies[ontologyNum].negativeSparqlResults[0][inner-1] = actionInner;
+						window.ontologies[ontologyNum].negativeSparqlResults[0][inner] = actionInnerMinusOne;
+					}
+				}
+			}
+
+			// create a temporary table (for the new sets)
+			var tempResults = [];
+			tempResults.push({});
+
+			// create sets based on the actions
+			for (var pos = 0, index = 0; index < window.ontologies[ontologyNum].negativeSparqlResults[0].length; index++) {
+				if (index == 0) {
+					tempResults[pos] = [];
+					tempResults[pos].push({});
+					tempResults[pos][0] = window.ontologies[ontologyNum].negativeSparqlResults[0][index];
+				} else {
+					if (window.ontologies[ontologyNum].negativeSparqlResults[0][index].action.value === window.ontologies[ontologyNum].negativeSparqlResults[0][index-1].action.value) {
+						tempResults[pos][tempResults[pos].length] = window.ontologies[ontologyNum].negativeSparqlResults[0][index];
+					} else {
+						pos++;
+						tempResults[pos] = [];
+						tempResults[pos].push({});
+
+						tempResults[pos][0] = window.ontologies[ontologyNum].negativeSparqlResults[0][index];
+					}
+				}
+			}
+
+			// merge results from both sets (allowed and negative assertion actions)
+			for (var index = 0; index < tempResults.length; index++) {
+				for (var pos = 0; pos < window.actionsData.length; pos++) {
+					var name = tempResults[index][0].action.value;
+					var actionNaming = "not" + name[0].toUpperCase() + name.substr(1);
+
+					if(actionNaming == window.actionsData[pos]){
+						window.ontologies[ontologyNum].sparqlResults[pos] = tempResults[index];
+
+						break;
+					}
+				}
+			}
+		}
+	}
+
 	/**
 	 * Removes any unnecessary data values from the ontology individuals array.
 	 * 
@@ -1093,7 +1155,6 @@ var PrepResults = function () {
 		if (individualIndex === -1 || dataIndex === -1) {
 			return "";
 		}
-
 
 		var actionLabel = actionType;
 		if (actionData.security !== "") {
@@ -1148,10 +1209,24 @@ var PrepResults = function () {
 				}
 			}
 
+			// bubble sort alphabetically the data values (regular and sensitive data)
+			for (var outter = 0; outter < window.ontologies[i].dataValue.length; outter++) {
+				for (var inner = 1; inner < window.ontologies[i].dataValue.length - outter; inner++) {
+					var dataValueInner = window.ontologies[i].dataValue[inner];
+					var dataValueMinusOne = window.ontologies[i].dataValue[inner-1];
+						
+					if (dataValueMinusOne > dataValueInner) {
+						window.ontologies[i].dataValue[inner-1] = dataValueInner;
+						window.ontologies[i].dataValue[inner] = dataValueMinusOne;
+					}
+				}
+			}
+
 			// clean individuals from any unnecessary data values
 			removeDataValuesFromIndividualArray(i);
 
 			// delete SPARQL results to clear up some memory
+			delete window.ontologies[i].negativeSparqlResults;
 			delete window.ontologies[i].sparqlResults;
 
 			app.logMessage((i + 1) + ". Results for '" + window.ontologies[i].name + "' have been processed successfully: " + className);
