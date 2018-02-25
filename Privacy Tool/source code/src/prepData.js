@@ -91,7 +91,7 @@ var PrepData = function () {
 			"Authority Regulator",
 			"Owners",
 			"Person Of Interest",
-			"Authorized Person",
+			"Authorised Person",
 			"System Users",
 			"Third Party Users",
 			"Third Party End Users",
