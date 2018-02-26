@@ -38,9 +38,9 @@ actors-ttl:Name a owl:AnnotationProperty ;
 :retentionPeriod a owl:AnnotationProperty ;
 	rdfs:comment "Defines the allowed time that an actor is able to the perform the respective data action"@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario#securityEnchancement
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario#securityEnhancement
 
-:securityEnchancement a owl:AnnotationProperty ;
+:securityEnhancement a owl:AnnotationProperty ;
 	rdfs:comment "Defines the security enchancement (security protocol) that is applied on a data action"@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario#useIntention
@@ -247,13 +247,13 @@ _:genid1 a owl:Axiom ;
 	owl:annotatedSource :BookResellerLtd ;
 	owl:annotatedProperty :analyzes ;
 	owl:annotatedTarget :PurchaseHistory01 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 
 _:genid2 a owl:Axiom ;
 	owl:annotatedSource :BookResellerLtd ;
 	owl:annotatedProperty :analyzes ;
 	owl:annotatedTarget :PurchaseHistory02 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario#EmailAddress01
 
@@ -345,73 +345,73 @@ _:genid10 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
 	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :PhysicalAddress02 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 
 _:genid11 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
 	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :PurchaseHistory01 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 
 _:genid12 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
 	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :PurchaseHistory02 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 
 _:genid13 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
 	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :TelephoneNumber01 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 
 _:genid14 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
 	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :TelephoneNumber02 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 
 _:genid3 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
 	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :EmailAddress01 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 
 _:genid4 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
 	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :EmailAddress02 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 
 _:genid5 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
 	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :FullName01 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 
 _:genid6 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
 	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :FullName02 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 
 _:genid7 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
 	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :IdentificationNumber01 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 
 _:genid8 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
 	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :IdentificationNumber02 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 
 _:genid9 a owl:Axiom ;
 	owl:annotatedSource :PersonalDataProtectionCommissionerOffice ;
 	owl:annotatedProperty :oversees ;
 	owl:annotatedTarget :PhysicalAddress01 ;
-	:securityEnchancement "AccessToken" .
+	:securityEnhancement "AccessToken" .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario#PhysicalAddress01
 

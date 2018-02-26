@@ -23,9 +23,9 @@
 :retentionPeriod a owl:AnnotationProperty ;
 	rdfs:comment "Defines the allowed time that an actor is able to the perform the respective data action"@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#securityEnchancement
+# http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#securityEnhancement
 
-:securityEnchancement a owl:AnnotationProperty ;
+:securityEnhancement a owl:AnnotationProperty ;
 	rdfs:comment "Defines the security enchancement (security protocol) that is applied on a data action"@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/a4cloudHealthCareScenario-conflicts#useIntention
