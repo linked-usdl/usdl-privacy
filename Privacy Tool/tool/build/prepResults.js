@@ -992,7 +992,7 @@ var PrepResults = function () {
 			output.push("<p class='graphical-results-ontology-name'><strong>", escape(ontology.name), "</strong></p>");
 			output.push("<div class='graphical-results-list' id='" + ontology.name + "'></div>");
 
-			output.push("<div class='legend-container'><ul class='legend'> <li><span class='legend-actors'></span>Actors</li> <li><span class='legend-regular-data'></span>Regular Data</li> <li><span class='legend-sensitive-data'></span>Sensitive Data</li> <li><span class='legend-security-enchancement'></span>Security Enchancement</li> </ul> </div>");
+			output.push("<div class='legend-container'><ul class='legend'> <li><span class='legend-actors'></span>Actors</li> <li><span class='legend-regular-data'></span>Regular Data</li> <li><span class='legend-sensitive-data'></span>Sensitive Data</li> <li><span class='legend-allowed-action'></span>Allowed Action</li> <li><span class='legend-not-allowed-action'></span>Not Allowed Action</li> <li><span class='legend-security-enchancement'></span>Security Enhanced</li> </ul> </div>");
 			if (window.ontologies.length > 1 && key < (window.ontologies.length - 1)) {
 				output.push("<hr class='graphical-results-line-space'>");
 			}
@@ -1137,7 +1137,7 @@ var PrepResults = function () {
 	 * 
 	 * @param {Array} nodes The nodes of the network graph.
 	 * @param {String} actionType The action type.
-	 * @param {String} actionData The action data (data typed information and security enchancement).
+	 * @param {String} actionData The action data (data typed information and security enhancement).
 	 * @param {String} individualName The name of the individual actor.
 	 * @return An object that represents the edge of the network graph.
 	 */
@@ -1161,7 +1161,15 @@ var PrepResults = function () {
 			actionLabel += " (" + actionData.security + ")";
 		}
 
-		return { from: individualIndex, to: dataIndex, label: actionLabel, color: actionData.security !== "" ? "#900020" : "#787878", font: { align: 'horizontal' }, length: 800 };
+		var colorCode = "#787878";
+		for (var i = 0; i < window.notAllowedActionsData.length; i++) {
+			if (actionType === window.notAllowedActionsData[i]) {
+				colorCode = "#900020";
+			}
+		}
+		colorCode = actionData.security !== "" ? "#7d2ad4" : colorCode;
+
+		return { from: individualIndex, to: dataIndex, label: actionLabel, color: colorCode, font: { align: 'horizontal' }, length: 800 };
 	}
 
 	/**

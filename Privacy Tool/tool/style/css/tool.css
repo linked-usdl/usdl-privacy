@@ -332,8 +332,20 @@ input:checked + .slider + .text:before {
     background-color: #f4c242;
 }
 
-.legend-security-enchancement {
+.legend-allowed-action {
+    background-color: #787878;
+    height: 7px ! important;
+    width: 21px ! important;;
+}
+
+.legend-not-allowed-action {
     background-color: #900020;
+    height: 7px ! important;
+    width: 21px ! important;;
+}
+
+.legend-security-enchancement {
+    background-color: #7d2ad4;
     height: 7px ! important;
     width: 21px ! important;;
 }
