@@ -992,7 +992,7 @@ var PrepResults = function () {
 			output.push("<p class='graphical-results-ontology-name'><strong>", escape(ontology.name), "</strong></p>");
 			output.push("<div class='graphical-results-list' id='" + ontology.name + "'></div>");
 
-			output.push("<div class='legend-container'><ul class='legend'> <li><span class='legend-actors'></span>Actors</li> <li><span class='legend-regular-data'></span>Regular Data</li> <li><span class='legend-sensitive-data'></span>Sensitive Data</li> <li><span class='legend-allowed-action'></span>Allowed Action</li> <li><span class='legend-not-allowed-action'></span>Not Allowed Action</li> <li><span class='legend-security-enchancement'></span>Security Enhanced</li> </ul> </div>");
+			output.push("<div class='legend-container'><ul class='legend'> <li><span class='legend-actors'></span>Actors</li> <li><span class='legend-regular-data'></span>Regular Data</li> <li><span class='legend-sensitive-data'></span>Sensitive Data</li> <li><span class='legend-allowed-action'></span>Allowed Action</li> <li><span class='legend-not-allowed-action'></span>Not Allowed Action</li> <li><span class='legend-security-enhancement'></span>Security Enhanced</li> </ul> </div>");
 			if (window.ontologies.length > 1 && key < (window.ontologies.length - 1)) {
 				output.push("<hr class='graphical-results-line-space'>");
 			}
@@ -1205,7 +1205,7 @@ var PrepResults = function () {
 						if (entry.entity.value === window.ontologies[i].individuals[l].name) {
 							var dataObject = {};
 							dataObject.value = entry.data.value;
-							dataObject.security = entry.securityEnchancement !== null ? entry.securityEnchancement.value : "";
+							dataObject.security = entry.securityEnhancement !== null ? entry.securityEnhancement.value : "";
 							dataObject.retention = entry.retentionPeriod !== null ? entry.retentionPeriod.value : "";
 							dataObject.intention = entry.useIntention !== null ? entry.useIntention.value : "";
 							window.ontologies[i].individuals[l].actions[j].data.push(dataObject);

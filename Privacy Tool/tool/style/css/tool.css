@@ -344,7 +344,7 @@ input:checked + .slider + .text:before {
     width: 21px ! important;;
 }
 
-.legend-security-enchancement {
+.legend-security-enhancement {
     background-color: #7d2ad4;
     height: 7px ! important;
     width: 21px ! important;;
