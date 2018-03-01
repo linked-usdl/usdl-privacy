@@ -118,54 +118,8 @@ data-ttl:SensitiveTopic a owl:AnnotationProperty ;
 
 :modifies a owl:ObjectProperty ;
 	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'Analyzes' onto the data (Regular and Sensitive Data - where applicable)."@en .
+	rdfs:comment "Represents an action of type 'Modifies' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notAnalyzes
-
-:notAnalyzes a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'notAnalyzes' onto the data (Regular and Sensitive Data - where applicable)."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notDistributes
-
-:notDistributes a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'notDistributes' onto the data (Regular and Sensitive Data - where applicable)."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notMaintains
-
-:notMaintains a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notModifies
-
-:notModifies a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'notModifies' onto the data (Regular and Sensitive Data - where applicable)."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notOversees
-
-:notOversees a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'notOversees' onto the data (Regular and Sensitive Data - where applicable)."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notProcesses
-
-:notProcesses a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'notProcesses' onto the data (Regular and Sensitive Data - where applicable)."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notProvides
-
-:notProvides a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'notProvides' onto the data (Regular and Sensitive Data - where applicable)."@en .
-# 
-# http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#notStorages
-
-:notStorages a owl:ObjectProperty ;
-	rdfs:subPropertyOf :Relation ;
-	rdfs:comment "Represents an action of type 'notStorages' onto the data (Regular and Sensitive Data - where applicable)."@en .
 # 
 # http://www.semanticweb.org/jioannou/ontologies/2017/2/bookstoreScenario-conflicts#oversees
 
