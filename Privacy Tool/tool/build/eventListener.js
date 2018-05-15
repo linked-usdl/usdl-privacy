@@ -51453,13 +51453,15 @@ var PrepResults = function () {
 			// merge results from both sets (allowed and negative assertion actions)
 			for (var index = 0; index < tempResults.length; index++) {
 				for (var pos = 0; pos < window.actionsData.length; pos++) {
-					var name = tempResults[index][0].action.value;
-					var actionNaming = "not" + name[0].toUpperCase() + name.substr(1);
+					if (tempResults[index][0]) {
+						var name = tempResults[index][0].action.value;
+						var actionNaming = "not" + name[0].toUpperCase() + name.substr(1);
 
-					if(actionNaming == window.actionsData[pos]){
-						window.ontologies[ontologyNum].sparqlResults[pos] = tempResults[index];
+						if(actionNaming == window.actionsData[pos]){
+							window.ontologies[ontologyNum].sparqlResults[pos] = tempResults[index];
 
-						break;
+							break;
+						}
 					}
 				}
 			}
