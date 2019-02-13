@@ -30,11 +30,11 @@ http://usdl-privacy.cs.ucy.ac.cy
 
 Please cite this work using:
 
-@inproceedings{kapitsaki2018linked,
-  title={Linked USDL Privacy: Describing Privacy Policies for Services},
-  author={Kapitsaki, Georgia and Ioannou, Joseph and Cardoso, Jorge and Pedrinaci, Carlos},
-  booktitle={2018 IEEE International Conference on Web Services (ICWS)},
-  pages={50--57},
-  year={2018},
-  organization={IEEE}
+@inproceedings{kapitsaki2018linked,\
+  title={Linked USDL Privacy: Describing Privacy Policies for Services},\
+  author={Kapitsaki, Georgia and Ioannou, Joseph and Cardoso, Jorge and Pedrinaci, Carlos},\
+  booktitle={2018 IEEE International Conference on Web Services (ICWS)},\
+  pages={50--57},\
+  year={2018},\
+  organization={IEEE}\
 }
